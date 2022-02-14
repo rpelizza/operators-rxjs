@@ -10,12 +10,12 @@ export class ObservableComponent implements OnInit {
 	constructor() {}
 
 	/* Explicação para o código abaixo:
-	1. A palavra-chave 'new' é usada para criar um novo objeto observável.
-	2. Dentro do objeto observável, passamos uma função que será chamada quando precisarmos assinar o objeto observável.
-	3. Dentro da função, chamamos o método Observer.next() para enviar o próximo valor ao observador.
-	4. O método Observer.next() aceita um parâmetro que será enviado ao observador. 
-	5. O método Observer.error() é usado para enviar um erro ao observador.
-	6. Chamamos o método Observer.complete() para dizer ao observador que não precisamos do observável para enviar mais valores.*/
+	1. O construtor Observable é chamado com a função Observer como parâmetro.
+	2. A função de observer é chamada cada vez que o Observable é inscrito por um assinante.
+	4. O objeto observer tem três métodos: next, error e complete.
+	4. O método Observer.next() aceita um parâmetro e é chamado quando o Observable emite um valor. 
+	5. O método Observer.error() é chamado quando o Observable emite um erro
+	6. O método Observer.complete() para dizer ao observador que não precisamos do observável para enviar mais valores.*/
 	ngOnInit(): void {
 		const myObservable = new Observable((observer) => {
 			observer.next(1);
@@ -28,11 +28,8 @@ export class ObservableComponent implements OnInit {
 		});
 
 		/* Explicação para o código abaixo:
-		1. Criamos um observável com uma função que recebe um observador como argumento.
-		2. O objeto observador tem um método next() que é chamado sempre que o observável emite um novo valor.
-		3. Assinamos o observável com o método subscribe(), que recebe um objeto observador como argumento.
-		4. O método subscribe() chamará o método next() sempre que o observável emitir um novo valor.
-		5. O método next() imprimirá o valor.
+		1. Assinamos o observável com o método subscribe(), que recebe um objeto observador como argumento.
+		2. O objeto observador tem um método next() que é chamado sempre que o observável emite um novo valor.		
 		6. O método error() será chamado se o observável lançar um erro.
 		7. O método complete() será chamado quando o observável for concluído. */
 		myObservable.subscribe({

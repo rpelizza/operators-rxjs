@@ -19,6 +19,13 @@ const routes: Routes = [
 				(m) => m.ObservableModule
 			),
 	},
+	{
+		path: 'subscription',
+		loadChildren: () =>
+			import('./pages/subscription/subscription.module').then(
+				(m) => m.SubscriptionModule
+			),
+	},
 ];
 
 @NgModule({

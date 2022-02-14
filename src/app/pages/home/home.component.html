@@ -1,6 +1,4 @@
-<h1>
-	Programação reativa - Estudo RXJS (Exemplos no console)
-</h1>
+<h1>Programação reativa - Estudo RXJS (Exemplos no console)</h1>
 
 <mat-accordion>
 	<!--! Observable -->
@@ -10,27 +8,44 @@
 			<mat-panel-description>
 				Objeto que pode emitir eventos
 			</mat-panel-description>
-		</mat-expansion-panel-header>	
-		<p>
-			Um Observable é um objeto que pode emitir eventos.
-		</p>
+		</mat-expansion-panel-header>
+		<p>Um Observable é um objeto que pode emitir eventos.</p>
 		<p>
 			<a routerLink="/observable">Clique aqui para ver o exemplo</a>
 		</p>
 	</mat-expansion-panel>
 
+	<!--! Subscription -->
 	<mat-expansion-panel>
 		<mat-expansion-panel-header>
-			<mat-panel-title> Observable </mat-panel-title>
+			<mat-panel-title> Subscription </mat-panel-title>
 			<mat-panel-description>
-				Objeto que pode emitir eventos
+				Objeto que armazena uma assinatura de um Observable
 			</mat-panel-description>
-		</mat-expansion-panel-header>	
+		</mat-expansion-panel-header>
 		<p>
-			Um Observable é um objeto que pode emitir eventos.
+			O objeto Subscription armazena uma assinatura de um Observable.
+			Quando o Observable é finalizado, a assinatura é cancelada.
 		</p>
 		<p>
-			<a routerLink="/observable">Clique aqui para ver o exemplo</a>
+			<a routerLink="/subscription">Clique aqui para ver o exemplo</a>
+		</p>
+	</mat-expansion-panel>
+
+	<!--! Subject -->
+	<mat-expansion-panel>
+		<mat-expansion-panel-header>
+			<mat-panel-title> Subject </mat-panel-title>
+			<mat-panel-description>
+				Um Subject é um Observable que pode emitir eventos
+			</mat-panel-description>
+		</mat-expansion-panel-header>
+		<p>
+			Um tipo especial de Observable que compartilha um único caminho de
+			execução entre observadores
+		</p>
+		<p>
+			<a routerLink="/subject">Clique aqui para ver o exemplo</a>
 		</p>
 	</mat-expansion-panel>
 </mat-accordion>

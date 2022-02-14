@@ -12,6 +12,9 @@
 			</mat-panel-description>
 		</mat-expansion-panel-header>	
 		<p>
+			Um Observable é um objeto que pode emitir eventos.
+		</p>
+		<p>
 			<a routerLink="/observable">Clique aqui para ver o exemplo</a>
 		</p>
 	</mat-expansion-panel>
@@ -22,41 +25,12 @@
 			<mat-panel-description>
 				Objeto que pode emitir eventos
 			</mat-panel-description>
-		</mat-expansion-panel-header>
+		</mat-expansion-panel-header>	
 		<p>
-			1. Observable é uma funcionalidade da biblioteca rxjs, que é
-			utilizada internamente pelo framework e já é instalada quando você
-			cria uma nova aplicação Angular. Com Observables, conseguimos lidar
-			com transferência de dados assíncrona. Muitas vezes, seu uso é
-			semelhante ao de Promises do Javascript, porém, podendo ser uma
-			fonte de transferência de dados contínua, ou seja, o Observable
-			poderá emitir dados várias vezes em momentos distintos de sua
-			existência.
+			Um Observable é um objeto que pode emitir eventos.
 		</p>
 		<p>
-			2. Observables são uma forma de comunicação entre componentes,
-			serviços e outros Observables.
-		</p>
-		<p>
-			<strong
-				>Obs.: Abra o arquivo observable.component.ts e veja o código
-				fonte.</strong
-			>
-		</p>
-		<p>
-			<a [routerLink]="['observable']">Clique aqui para ver o exemplo</a>
+			<a routerLink="/observable">Clique aqui para ver o exemplo</a>
 		</p>
 	</mat-expansion-panel>
 </mat-accordion>
-
-<ul>
-	<li><strong>Observer</strong> -> é um objeto que pode receber eventos</li>
-	<li>
-		<strong>Subject</strong> -> é um objeto que pode emitir e receber
-		eventos
-	</li>
-	<li>
-		<strong>Subscription</strong> -> é um objeto que pode ser usado para
-		cancelar a assinatura de um Observable
-	</li>
-</ul>

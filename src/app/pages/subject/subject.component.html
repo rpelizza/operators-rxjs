@@ -1,0 +1,51 @@
+<mat-card>
+	<mat-card-title>Subject</mat-card-title>
+	<mat-card-subtitle>
+		Um Subject é um Observable que pode emitir eventos
+	</mat-card-subtitle>
+	<mat-card-content>
+		<p>
+			1. Enquanto os Observables simples são unicast (cada Observer
+			inscrito possui uma execução independente do Observable), os
+			Subjects são multicast. Um Subject é como um Observável, mas pode
+			transmitir para muitos Observadores.
+		</p>
+		<p>2. Todo subject é um observable e você pode se inscrever nele.</p>
+		<p>
+			3. Todo subject é um observer. É um objeto com os métodos next(v),
+			error(e) e complete(). Para alimentar um novo valor para o Subject,
+			basta chamar next(theValue), e ele será multicast para os
+			Observadores cadastrados para escutar o Subject.
+		</p>
+		<p>
+			<strong
+				>Obs2.: Abra o arquivo subject.component.ts e subject-service.ts
+				e veja o código fonte.</strong
+			>
+		</p>
+		<hr>
+		<div *ngIf="message">
+			<span style="color: red;">{{ message }}</span>
+		</div>
+		<p>
+			<input type="text" placeholder="Digite a mensagem" #mensagem />
+			<button type="button" (click)="setMessage(mensagem)">
+				Enviar
+			</button>
+		</p>
+		<hr>
+		<p>
+			<img src="assets/subject-1.png" alt="" />
+		</p>
+		<p>
+			<img src="assets/subject-2.png" alt="" />
+		</p>
+		<p>
+			<img src="assets/subject-3.png" alt="" />
+		</p>
+	</mat-card-content>
+	<mat-divider inset></mat-divider>
+	<mat-card-actions>
+		<button routerLink="/home" mat-button color="primary">Voltar</button>
+	</mat-card-actions>
+</mat-card>

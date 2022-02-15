@@ -37,12 +37,15 @@
 		<mat-expansion-panel-header>
 			<mat-panel-title> Subject </mat-panel-title>
 			<mat-panel-description>
-				Um Subject é um Observable que pode emitir eventos
+				Um Subject é um tipo especial de Observable que permite que
+				valores sejam disparados para muitos Observadores.
 			</mat-panel-description>
 		</mat-expansion-panel-header>
 		<p>
-			Um tipo especial de Observable que compartilha um único caminho de
-			execução entre observadores
+			Enquanto os Observables simples são unicast (cada Observer inscrito
+			possui uma execução independente do Observable), os Subjects são
+			multicast. Um Subject é como um Observável, mas pode transmitir para
+			muitos Observadores.
 		</p>
 		<p>
 			<a routerLink="/subject">Clique aqui para ver o exemplo</a>

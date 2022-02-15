@@ -40,7 +40,14 @@ const routes: Routes = [
 				(m) => m.BehaviorSubjectModule
 			),
 	},
-	{ path: 'replay-subject', loadChildren: () => import('./pages/replay-subject/replay-subject.module').then(m => m.ReplaySubjectModule) },
+	{
+		path: 'replay-subject',
+		loadChildren: () =>
+			import('./pages/replay-subject/replay-subject.module').then(
+				(m) => m.ReplaySubjectModule
+			),
+	},
+	{ path: 'async-subject', loadChildren: () => import('./pages/async-subject/async-subject.module').then(m => m.AsyncSubjectModule) },
 ];
 
 @NgModule({

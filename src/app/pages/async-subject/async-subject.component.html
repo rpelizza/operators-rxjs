@@ -1,0 +1,34 @@
+<mat-card>
+	<mat-card-title>Async Subject</mat-card-title>
+	<mat-card-subtitle>
+		É um Subject que emite o último valor após todos os valores serem
+		enviados.
+	</mat-card-subtitle>
+	<mat-card-content>
+		<p>
+			1. Apenas o último valor da execução observable é enviado para os
+			observadores e somente quando a execução é concluida.
+		</p>
+		<p>
+			2. AsyncSubject precisa esperar até que o observável de origem seja
+			concluído antes de identificar o valor atual como o mais recente e
+			só então emiti-lo para subscribers existentes ou futuros.
+		</p>
+		<p>
+			<strong>Obs.: Abra o console para ver o resultado.</strong>
+		</p>
+		<p>
+			<strong
+				>Obs2.: Abra o arquivo async-subject.component.ts e veja o
+				código fonte.</strong
+			>
+		</p>
+		<p>
+			<img src="assets/async-subject-1.png" alt="" />
+		</p>
+	</mat-card-content>
+	<mat-divider inset></mat-divider>
+	<mat-card-actions>
+		<button routerLink="/home" mat-button color="primary">Voltar</button>
+	</mat-card-actions>
+</mat-card>

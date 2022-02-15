@@ -26,7 +26,20 @@ const routes: Routes = [
 				(m) => m.SubscriptionModule
 			),
 	},
-	{ path: 'subject', loadChildren: () => import('./pages/subject/subject.module').then(m => m.SubjectModule) },
+	{
+		path: 'subject',
+		loadChildren: () =>
+			import('./pages/subject/subject.module').then(
+				(m) => m.SubjectModule
+			),
+	},
+	{
+		path: 'behavior-subject',
+		loadChildren: () =>
+			import('./pages/behavior-subject/behavior-subject.module').then(
+				(m) => m.BehaviorSubjectModule
+			),
+	},
 ];
 
 @NgModule({

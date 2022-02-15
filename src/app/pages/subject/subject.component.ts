@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SubjectService } from './subject.service';
+import { Subject } from 'rxjs';
 
 @Component({
 	selector: 'app-subject',
@@ -7,25 +7,24 @@ import { SubjectService } from './subject.service';
 	styleUrls: ['./subject.component.scss'],
 })
 export class SubjectComponent implements OnInit {
-	constructor(private subjectService: SubjectService) {}
+	constructor() {}
 
+	
 	/* Aqui está a explicação para o código acima:
-	1. Criamos um subjectService que é um serviço singleton, o que significa que estará disponível em toda a aplicação.
-	2. Vamos assinar o subjectService.message, que é um Subscribe no subjectService.
-	3. Vamos usar o método 'next' para enviar o valor do evento para o Subscribe.
-	4. Vamos definir a propriedade message do componente para o valor que é enviado para o subject. */
-
-	public message: string = '';
+	1. Criamos um subject.
+	2. Nós o subscrevemos.
+	3. Chamamos next para enviar um valor ao subject.
+	4. O valor será registrado no console.
+	A classe Subject é um Observable que permite que valores sejam multicast para muitos Observadores.
+	Podemos assinar um Subject passando um objeto Observer.
+	A classe Observer é um objeto simples que fornece um retorno de chamada para cada notificação. */ 
+	private mySubject = new Subject<string>();
 
 	ngOnInit() {
-		this.subjectService.message.subscribe({
-			next: (value) => {
-				this.message = value;
-			},
+		this.mySubject.subscribe({
+			next: (v) => console.log(v),
 		});
-	}
 
-	setMessage(event: any) {
-		this.subjectService.setMessage(event.value);
+		this.mySubject.next('First value');
 	}
 }

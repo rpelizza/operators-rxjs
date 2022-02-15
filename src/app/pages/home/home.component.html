@@ -62,10 +62,30 @@
 			</mat-panel-description>
 		</mat-expansion-panel-header>
 		<p>
-			Requer um valor inicial e emite o valor atual para novos subscribers.
+			Requer um valor inicial e emite o valor atual para novos
+			subscribers.
 		</p>
 		<p>
 			<a routerLink="/behavior-subject">Clique aqui para ver o exemplo</a>
+		</p>
+	</mat-expansion-panel>
+
+	<!--! Replay Subject -->
+	<mat-expansion-panel>
+		<mat-expansion-panel-header>
+			<mat-panel-title> Replay Subject </mat-panel-title>
+			<mat-panel-description>
+				"Reproduz" ou emite valores antigos para novos subscribers.
+			</mat-panel-description>
+		</mat-expansion-panel-header>
+		<p>
+			ReplaySubject é semelhante ao BehaviorSubject na maneira como pode
+			enviar valores em cache para novos assinantes, mas em vez de apenas
+			um valor atual, ele pode gravar e reproduzir uma série inteira de
+			valores.
+		</p>
+		<p>
+			<a routerLink="/replay-subject">Clique aqui para ver o exemplo</a>
 		</p>
 	</mat-expansion-panel>
 </mat-accordion>

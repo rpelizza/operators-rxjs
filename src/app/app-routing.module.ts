@@ -40,6 +40,7 @@ const routes: Routes = [
 				(m) => m.BehaviorSubjectModule
 			),
 	},
+	{ path: 'replay-subject', loadChildren: () => import('./pages/replay-subject/replay-subject.module').then(m => m.ReplaySubjectModule) },
 ];
 
 @NgModule({

@@ -1,0 +1,37 @@
+<mat-card>
+	<mat-card-title>Replay Subject</mat-card-title>
+	<mat-card-subtitle>
+		"Reproduz" ou emite valores antigos para novos subscribers.
+	</mat-card-subtitle>
+	<mat-card-content>
+		<p>
+			1. ReplaySubject é semelhante ao BehaviorSubject na maneira como pode
+			enviar valores em cache para novos assinantes, mas em vez de apenas
+			um valor atual, ele pode gravar e reproduzir uma série inteira de
+			valores.
+		</p>
+		<p>
+			2. O ReplaySubject possui um limite de itens que serão gravados.
+			Quando o limite é atingido, o ReplaySubject irá descartar o valor
+			antigo mais antigo.
+		</p>
+		<p>
+			<strong>Obs.: Abra o console para ver o resultado.</strong>
+		</p>
+		<p>
+			<strong
+				>Obs2.: Abra o arquivo replay-subject.component.ts e veja o código fonte.</strong
+			>
+		</p>
+		<p>
+			<img src="assets/replay-subject-1.png" alt="" />
+		</p>
+		<p>
+			<img src="assets/replay-subject-2.png" alt="" />
+		</p>
+	</mat-card-content>
+	<mat-divider inset></mat-divider>
+	<mat-card-actions>
+		<button routerLink="/home" mat-button color="primary">Voltar</button>
+	</mat-card-actions>
+</mat-card>

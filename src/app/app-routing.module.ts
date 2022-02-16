@@ -49,6 +49,7 @@ const routes: Routes = [
 	},
 	{ path: 'async-subject', loadChildren: () => import('./pages/async-subject/async-subject.module').then(m => m.AsyncSubjectModule) },
 	{ path: 'audit', loadChildren: () => import('./pages/audit/audit.module').then(m => m.AuditModule) },
+	{ path: 'audit-time', loadChildren: () => import('./pages/audit-time/audit-time.module').then(m => m.AuditTimeModule) },
 ];
 
 @NgModule({

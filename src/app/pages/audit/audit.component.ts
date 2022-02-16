@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { audit, fromEvent, interval } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { audit, fromEvent, interval, Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-audit',
 	templateUrl: './audit.component.html',
 	styleUrls: ['./audit.component.scss'],
 })
-export class AuditComponent implements OnInit {
+export class AuditComponent implements OnInit, OnDestroy {
 	constructor() {}
+
+	result: any = Subscription;
 
 	/* Aqui está a explicação para o código acima:
 	1. Criamos uma variável chamada clicks, que é um Observable que emite cliques do mouse a partir do documento.
@@ -18,6 +20,10 @@ export class AuditComponent implements OnInit {
 	ngOnInit(): void {
 		const clicks = fromEvent(document, 'click');
 		const result = clicks.pipe(audit((ev) => interval(1000)));
-		result.subscribe((x) => console.log(x));
+		this.result = result.subscribe((x) => console.log(x));
+	}
+
+	ngOnDestroy(): void {
+		this.result.unsubscribe();
 	}
 }

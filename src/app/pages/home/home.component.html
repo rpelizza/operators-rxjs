@@ -93,12 +93,14 @@
 	<mat-expansion-panel>
 		<mat-expansion-panel-header>
 			<mat-panel-title> Async Subject </mat-panel-title>
-			<mat-panel-description>				
-				É um Subject que emite o último valor após todos os valores serem enviados.
+			<mat-panel-description>
+				É um Subject que emite o último valor após todos os valores
+				serem enviados.
 			</mat-panel-description>
 		</mat-expansion-panel-header>
 		<p>
-			Apenas o último valor da execução observable é enviado para os observadores e somente quando a execução é concluida.
+			Apenas o último valor da execução observable é enviado para os
+			observadores e somente quando a execução é concluida.
 		</p>
 		<p>
 			<a routerLink="/async-subject">Clique aqui para ver o exemplo</a>
@@ -119,6 +121,24 @@
 		</p>
 		<p>
 			<a routerLink="/audit">Clique aqui para ver o exemplo</a>
+		</p>
+	</mat-expansion-panel>
+
+	<!--! AuditTime -->
+	<mat-expansion-panel>
+		<mat-expansion-panel-header>
+			<mat-panel-title> AuditTime </mat-panel-title>
+			<mat-panel-description>
+				"Audita" ou "filtra" os valores enviados.
+			</mat-panel-description>
+		</mat-expansion-panel-header>
+		<p>
+			Ignora os valores de origem por milissegundos de duração, em
+			seguida, emite o valor mais recente da origem Observável e repete
+			esse processo.
+		</p>
+		<p>
+			<a routerLink="/audit-time">Clique aqui para ver o exemplo</a>
 		</p>
 	</mat-expansion-panel>
 </mat-accordion>

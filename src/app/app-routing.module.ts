@@ -79,6 +79,7 @@ const routes: Routes = [
 			),
 	},
 	{ path: 'buffer-time', loadChildren: () => import('./pages/buffer-time/buffer-time.module').then(m => m.BufferTimeModule) },
+	{ path: 'buffer-toggle', loadChildren: () => import('./pages/buffer-toggle/buffer-toggle.module').then(m => m.BufferToggleModule) },
 ];
 
 @NgModule({

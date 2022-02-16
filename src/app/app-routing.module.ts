@@ -78,6 +78,7 @@ const routes: Routes = [
 				(m) => m.BufferCountModule
 			),
 	},
+	{ path: 'buffer-time', loadChildren: () => import('./pages/buffer-time/buffer-time.module').then(m => m.BufferTimeModule) },
 ];
 
 @NgModule({

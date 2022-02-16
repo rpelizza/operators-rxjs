@@ -71,6 +71,13 @@ const routes: Routes = [
 		loadChildren: () =>
 			import('./pages/buffer/buffer.module').then((m) => m.BufferModule),
 	},
+	{
+		path: 'buffer-count',
+		loadChildren: () =>
+			import('./pages/buffer-count/buffer-count.module').then(
+				(m) => m.BufferCountModule
+			),
+	},
 ];
 
 @NgModule({

@@ -1,0 +1,40 @@
+<mat-card>
+	<mat-card-title>BufferCount</mat-card-title>
+	<mat-card-subtitle>
+		Armazena os valores observáveis de origem até que o tamanho atinja o
+		bufferSize máximo fornecido.
+	</mat-card-subtitle>
+	<mat-card-content>
+		<p>
+			1. Coleta valores do passado como um array e emite esse array
+			somente quando seu tamanho atinge bufferSize.
+		</p>
+		<p>
+			2. Parametro: <strong>bufferSize</strong> - O tamanho máximo do
+			buffer emitido.
+		</p>
+		<p>
+			3. Parametro: <strong>startBufferEvery</strong> (opcional. Valor
+			padrão é null) - Intervalo no qual iniciar um novo buffer. Por
+			exemplo, se startBufferEvery for 2, um novo buffer será iniciado em
+			todos os outros valores da origem. Um novo buffer é iniciado no
+			começo da origem por padrão.
+		</p>
+		<p>
+			<strong>Obs.: Abra o console para ver o resultado.</strong>
+		</p>
+		<p>
+			<strong
+				>Obs2.: Abra o arquivo buffer-count.component.ts e veja o código
+				fonte.</strong
+			>
+		</p>
+		<p>
+			<img src="assets/buffer-count.png" alt="" />
+		</p>
+	</mat-card-content>
+	<mat-divider inset></mat-divider>
+	<mat-card-actions>
+		<button routerLink="/home" mat-button color="primary">Voltar</button>
+	</mat-card-actions>
+</mat-card>

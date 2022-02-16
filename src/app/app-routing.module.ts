@@ -47,9 +47,30 @@ const routes: Routes = [
 				(m) => m.ReplaySubjectModule
 			),
 	},
-	{ path: 'async-subject', loadChildren: () => import('./pages/async-subject/async-subject.module').then(m => m.AsyncSubjectModule) },
-	{ path: 'audit', loadChildren: () => import('./pages/audit/audit.module').then(m => m.AuditModule) },
-	{ path: 'audit-time', loadChildren: () => import('./pages/audit-time/audit-time.module').then(m => m.AuditTimeModule) },
+	{
+		path: 'async-subject',
+		loadChildren: () =>
+			import('./pages/async-subject/async-subject.module').then(
+				(m) => m.AsyncSubjectModule
+			),
+	},
+	{
+		path: 'audit',
+		loadChildren: () =>
+			import('./pages/audit/audit.module').then((m) => m.AuditModule),
+	},
+	{
+		path: 'audit-time',
+		loadChildren: () =>
+			import('./pages/audit-time/audit-time.module').then(
+				(m) => m.AuditTimeModule
+			),
+	},
+	{
+		path: 'buffer',
+		loadChildren: () =>
+			import('./pages/buffer/buffer.module').then((m) => m.BufferModule),
+	},
 ];
 
 @NgModule({

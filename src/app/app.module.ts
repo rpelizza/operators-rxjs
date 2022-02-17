@@ -8,6 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
 	declarations: [AppComponent],
@@ -19,6 +23,11 @@ import { MatSelectModule } from '@angular/material/select';
 		MatToolbarModule,
 		MatIconModule,
 		MatSelectModule,
+		MatAutocompleteModule,
+		FormsModule,
+		ReactiveFormsModule,
+		MatFormFieldModule,
+        MatInputModule
 	],
 	providers: [],
 	bootstrap: [AppComponent],

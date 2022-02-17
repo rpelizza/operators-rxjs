@@ -3,17 +3,37 @@
 
 	<span>
 		<mat-form-field>
-			<mat-select [(value)]="defaultSelected" (valueChange)="selectRXJS($event)">
-				<mat-option
-					[value]="item.route"
-					*ngFor="let item of items"
-					>{{ item.name }}</mat-option
-				>
+			<mat-select
+				[(value)]="defaultSelected"
+				(valueChange)="selectRXJS($event)"
+			>
+				<mat-option [value]="item.route" *ngFor="let item of items">{{
+					item.name
+				}}</mat-option>
 			</mat-select>
 		</mat-form-field>
 	</span>
 
-	<span> search </span>
+	<form>
+		
+		<mat-form-field class="example-full-width">
+			<input
+				type="text"
+				matInput
+				[formControl]="myControl"
+				[matAutocomplete]="auto"
+			/>
+			<mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+				<mat-option
+					*ngFor="let option of filteredOptions | async"
+					[value]="option"
+				>
+					{{ option.name }}
+				</mat-option>
+			</mat-autocomplete>
+		</mat-form-field>
+		<mat-icon>search</mat-icon>
+	</form>
 
 	<!-- <button
 		mat-icon-button

@@ -6,7 +6,7 @@
 			<mat-select [(value)]="defaultSelected" (valueChange)="selectRXJS($event)">
 				<mat-option
 					[value]="item.route"
-					*ngFor="let item of RxjsItems$ | async"
+					*ngFor="let item of items"
 					>{{ item.name }}</mat-option
 				>
 			</mat-select>

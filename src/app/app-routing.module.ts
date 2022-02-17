@@ -78,9 +78,27 @@ const routes: Routes = [
 				(m) => m.BufferCountModule
 			),
 	},
-	{ path: 'buffer-time', loadChildren: () => import('./pages/buffer-time/buffer-time.module').then(m => m.BufferTimeModule) },
-	{ path: 'buffer-toggle', loadChildren: () => import('./pages/buffer-toggle/buffer-toggle.module').then(m => m.BufferToggleModule) },
-	{ path: 'buffer-when', loadChildren: () => import('./pages/buffer-when/buffer-when.module').then(m => m.BufferWhenModule) },
+	{
+		path: 'buffer-time',
+		loadChildren: () =>
+			import('./pages/buffer-time/buffer-time.module').then(
+				(m) => m.BufferTimeModule
+			),
+	},
+	{
+		path: 'buffer-toggle',
+		loadChildren: () =>
+			import('./pages/buffer-toggle/buffer-toggle.module').then(
+				(m) => m.BufferToggleModule
+			),
+	},
+	{
+		path: 'buffer-when',
+		loadChildren: () =>
+			import('./pages/buffer-when/buffer-when.module').then(
+				(m) => m.BufferWhenModule
+			),
+	},
 ];
 
 @NgModule({

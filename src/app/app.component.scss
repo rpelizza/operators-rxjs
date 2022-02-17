@@ -1,6 +1,15 @@
-mat-toolbar, form {
+mat-toolbar,
+form {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+}
+
+::ng-deep .mat-select-panel .mat-option-text {
+	font-size: 14px;
+}
+
+::ng-deep .mat-select-panel .mat-option {
+	height: 2em!important;
 }

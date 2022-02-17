@@ -1,2 +1,27 @@
-<h1>OLá</h1>
+<mat-toolbar color="primary">
+	<span>RXJS</span>
+
+	<span>
+		<mat-form-field>
+			<mat-select [(value)]="defaultSelected" (valueChange)="selectRXJS($event)">
+				<mat-option
+					[value]="item.route"
+					*ngFor="let item of RxjsItems$ | async"
+					>{{ item.name }}</mat-option
+				>
+			</mat-select>
+		</mat-form-field>
+	</span>
+
+	<span> search </span>
+
+	<!-- <button
+		mat-icon-button
+		class="example-icon"
+		aria-label="Example icon-button with share icon"
+	>
+		<mat-icon>share</mat-icon>
+	</button> -->
+</mat-toolbar>
+
 <router-outlet></router-outlet>

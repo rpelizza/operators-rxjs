@@ -15,13 +15,13 @@ const routes: Routes = [
 				(m) => m.HomeModule
 			),
 	},
-	// {
-	// 	path: 'observable',
-	// 	loadChildren: () =>
-	// 		import('./pages/observable/observable.module').then(
-	// 			(m) => m.ObservableModule
-	// 		),
-	// },
+	{
+		path: 'observable',
+		loadChildren: () =>
+			import('./pages/observable/observable.module').then(
+				(m) => m.ObservableModule
+			),
+	},
 	// {
 	// 	path: 'subscription',
 	// 	loadChildren: () =>

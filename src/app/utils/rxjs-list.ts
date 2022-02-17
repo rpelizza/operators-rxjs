@@ -2,6 +2,17 @@ import { IRxjsList } from '../interfaces/IRxjsList.interface';
 
 export const rxjsList: IRxjsList[] = [
 	{
+		name: 'Início',
+		route: 'home',
+		parameters: [],
+		links: [],
+		videos: [],
+		shortDescription: '',
+		listOfDescription: [],
+		tips: [],
+		listOfImages: [],
+	},
+	{
 		name: 'Observable',
 		route: 'observable',
 		parameters: [],

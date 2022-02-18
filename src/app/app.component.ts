@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { map, Observable, startWith } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { IRxjsList } from './interfaces/IRxjsList.interface';
 import { AppSettingsService } from './services/app-settings.service';
 
@@ -34,6 +34,16 @@ export class AppComponent implements OnInit {
 		this.filteredOptions = this.myControl.valueChanges.pipe(
 			map((value) => (value ? this._filter(value) : this.items.slice()))
 		);
+
+		this.appSettingsService.notification$.subscribe({
+			next: (data) => {
+				Promise.resolve().then(
+					() =>
+						(this.defaultSelected =
+							this.items[this.getIndexByRouteName(data)].route)
+				);
+			},
+		});
 	}
 
 	selectRXJS(route: string) {
@@ -44,8 +54,6 @@ export class AppComponent implements OnInit {
 
 	selectOption(evt: any) {
 		this.selectRXJS(evt.option.value.route);
-		this.defaultSelected =
-			this.items[this.getIndexByRouteName(evt.option.value.route)].route;
 	}
 
 	getIndexByRouteName(routeName: string) {

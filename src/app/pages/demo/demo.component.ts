@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subject, switchMap } from 'rxjs';
-import { IRxjsList } from 'src/app/interfaces/IRxjsList.interface';
+import { Subject, switchMap, tap } from 'rxjs';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 
 @Component({
@@ -19,7 +18,10 @@ export class DemoComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.actualRxjs$ = this.route.queryParams.pipe(
-			switchMap((params) => this.appSettingsService.getOneRxjs(params['rxjs']))
+			tap((data) => this.appSettingsService.notify(data['rxjs'])),
+			switchMap((params) =>
+				this.appSettingsService.getOneRxjs(params['rxjs'])
+			)
 		);
 
 		//! Remover depois

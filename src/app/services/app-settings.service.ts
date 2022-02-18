@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { IRxjsList } from '../interfaces/IRxjsList.interface';
 import { rxjsList } from '../utils/rxjs-list';
 
@@ -7,6 +7,9 @@ import { rxjsList } from '../utils/rxjs-list';
 	providedIn: 'root',
 })
 export class AppSettingsService {
+
+	public notification$ = new Subject<string>()
+
 	constructor() {}
 
 	getLocalJson(): Observable<IRxjsList[]> {
@@ -15,5 +18,9 @@ export class AppSettingsService {
 
 	getOneRxjs(route: string): Observable<any> {
 		return of(rxjsList.find((el) => el.route === route));
+	}
+
+	notify(route: string) {
+		this.notification$.next(route);
 	}
 }

@@ -46,18 +46,18 @@ export class AppComponent implements OnInit {
 		});
 	}
 
-	selectRXJS(route: string) {
+	selectRXJS(route: string): void {
 		route === 'home'
 			? this.router.navigate([''])
 			: this.router.navigate(['demo'], { queryParams: { rxjs: route } });
 	}
 
-	goToHome() {
+	goToHome(): void {
 		this.router.navigate(['']);
 		this.defaultSelected = this.items[0].route;
 	}
 
-	selectOption(evt: any) {
+	selectOption(evt: any): void {
 		if (evt.option.value.route === 'home') {
 			this.router.navigate(['']);
 			this.defaultSelected = this.items[0].route;
@@ -66,7 +66,7 @@ export class AppComponent implements OnInit {
 		this.selectRXJS(evt.option.value.route);
 	}
 
-	getIndexByRouteName(routeName: string) {
+	getIndexByRouteName(routeName: string): number {
 		return this.items.findIndex((el) => el.route === routeName);
 	}
 
@@ -74,7 +74,7 @@ export class AppComponent implements OnInit {
 		return rxjs && rxjs.name ? rxjs.name : '';
 	}
 
-	private _filter(text: any) {
+	private _filter(text: string): IRxjsList[] {
 		const filterValue = this.replaceSpecialCharacters(
 			text.toString().toLowerCase()
 		);

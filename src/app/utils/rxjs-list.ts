@@ -104,7 +104,7 @@ export const rxjsList: IRxjsList[] = [
 		route: 'replay-subject',
 		parameters: [
 			{
-				name: 'Tamanho do buffer (BufferSize)',
+				name: 'BufferSize',
 				default: 'Number.POSITIVE_INFINITY',
 				required: false,
 				type: 'number',
@@ -112,7 +112,7 @@ export const rxjsList: IRxjsList[] = [
 					'Isso determinará quantos itens são armazenados no buffer, o padrão é infinito (Quantidade máxima de valores a serem emitidos).',
 			},
 			{
-				name: 'Vida útil do buffer (WindowTime)',
+				name: 'WindowTime',
 				default: 'Number.POSITIVE_INFINITY (milisegundos)',
 				required: false,
 				type: 'number',

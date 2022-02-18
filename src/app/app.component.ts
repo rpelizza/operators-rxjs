@@ -42,23 +42,47 @@ export class AppComponent implements OnInit {
 			: this.router.navigate(['demo'], { queryParams: { rxjs: route } });
 	}
 
+	selectOption(evt: any) {
+		this.selectRXJS(evt.option.value.route);
+		this.defaultSelected =
+			this.items[this.getIndexByRouteName(evt.option.value.route)].route;
+	}
+
+	getIndexByRouteName(routeName: string) {
+		return this.items.findIndex((el) => el.route === routeName);
+	}
+
 	displayFn(rxjs: IRxjsList): string {
 		return rxjs && rxjs.name ? rxjs.name : '';
 	}
 
 	private _filter(text: any) {
-		console.log(text);
-		const filterValue = text.toString().toLowerCase();
+		const filterValue = this.replaceSpecialCharacters(
+			text.toString().toLowerCase()
+		);
+
 		return this.items.filter(
 			(option) =>
-				option.name.toLowerCase().includes(filterValue) ||
-				option.shortDescription.toLowerCase().includes(filterValue) ||
+				this.replaceSpecialCharacters(
+					option.name.toLowerCase()
+				).includes(filterValue) ||
+				this.replaceSpecialCharacters(
+					option.shortDescription.toLowerCase()
+				).includes(filterValue) ||
 				option.listOfDescription.filter((el) =>
-					el.toLowerCase().includes(filterValue)
+					this.replaceSpecialCharacters(el).includes(filterValue)
 				).length > 0 ||
 				option.tips.filter((el) =>
-					el.toLowerCase().includes(filterValue)
+					this.replaceSpecialCharacters(el).includes(filterValue)
 				).length > 0
 		);
+	}
+
+	private replaceSpecialCharacters(text: string): string {
+		return text
+			.normalize('NFD')
+			.replace(/[\u0300-\u036f]/g, '')
+			.replace(/\s+/g, '-')
+			.toLowerCase();
 	}
 }

@@ -6,14 +6,12 @@ const routes: Routes = [
 	{
 		path: '',
 		redirectTo: 'home',
-		pathMatch: 'full' 
+		pathMatch: 'full',
 	},
 	{
 		path: 'home',
 		loadChildren: () =>
-			import('./pages/home/home.module').then(
-				(m) => m.HomeModule
-			),
+			import('./pages/home/home.module').then((m) => m.HomeModule),
 	},
 	{
 		path: 'observable',
@@ -21,6 +19,11 @@ const routes: Routes = [
 			import('./pages/observable/observable.module').then(
 				(m) => m.ObservableModule
 			),
+	},
+	{
+		path: 'demo',
+		loadChildren: () =>
+			import('./pages/demo/demo.module').then((m) => m.DemoModule),
 	},
 	// {
 	// 	path: 'subscription',

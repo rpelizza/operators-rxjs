@@ -32,18 +32,14 @@ export class AppComponent implements OnInit {
 		});
 
 		this.filteredOptions = this.myControl.valueChanges.pipe(
-			map((value) =>
-				value
-					? this._filter(
-							value
-					  )
-					: this.items.slice()
-			)
+			map((value) => (value ? this._filter(value) : this.items.slice()))
 		);
 	}
 
-	selectRXJS(event: Event) {
-		this.router.navigate([event]);
+	selectRXJS(route: string) {
+		route === 'home'
+			? this.router.navigate([''])
+			: this.router.navigate(['demo'], { queryParams: { rxjs: route } });
 	}
 
 	displayFn(rxjs: IRxjsList): string {

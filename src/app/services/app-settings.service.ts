@@ -12,4 +12,8 @@ export class AppSettingsService {
 	getLocalJson(): Observable<IRxjsList[]> {
 		return of(rxjsList);
 	}
+
+	getOneRxjs(route: string): Observable<any> {
+		return of(rxjsList.find((el) => el.route === route));
+	}
 }

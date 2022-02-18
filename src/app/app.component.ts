@@ -47,6 +47,7 @@ export class AppComponent implements OnInit {
 	}
 
 	private _filter(text: any) {
+		console.log(text);
 		const filterValue = text.toLowerCase();
 		return this.items.filter(
 			(option) =>

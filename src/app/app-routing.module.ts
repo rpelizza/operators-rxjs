@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 
 const routes: Routes = [
 	{
@@ -12,13 +11,6 @@ const routes: Routes = [
 		path: 'home',
 		loadChildren: () =>
 			import('./pages/home/home.module').then((m) => m.HomeModule),
-	},
-	{
-		path: 'observable',
-		loadChildren: () =>
-			import('./pages/observable/observable.module').then(
-				(m) => m.ObservableModule
-			),
 	},
 	{
 		path: 'demo',

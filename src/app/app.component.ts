@@ -52,7 +52,17 @@ export class AppComponent implements OnInit {
 			: this.router.navigate(['demo'], { queryParams: { rxjs: route } });
 	}
 
+	goToHome() {
+		this.router.navigate(['']);
+		this.defaultSelected = this.items[0].route;
+	}
+
 	selectOption(evt: any) {
+		if (evt.option.value.route === 'home') {
+			this.router.navigate(['']);
+			this.defaultSelected = this.items[0].route;
+			return;
+		}
 		this.selectRXJS(evt.option.value.route);
 	}
 

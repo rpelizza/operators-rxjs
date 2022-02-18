@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { Subject, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, Subject, switchMap, tap } from 'rxjs';
+import { IRxjsList } from 'src/app/interfaces/IRxjsList.interface';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 
 @Component({
@@ -9,11 +11,21 @@ import { AppSettingsService } from 'src/app/services/app-settings.service';
 	styleUrls: ['./demo.component.scss'],
 })
 export class DemoComponent implements OnInit {
-	public actualRxjs$: any = new Subject();
+	public actualRxjs$: Subject<IRxjsList> = new BehaviorSubject<IRxjsList>({
+		name: '',
+		route: '',
+		parameters: [],
+		links: [],
+		video: [],
+		shortDescription: '',
+		listOfDescription: [],
+		tips: [],
+	});
 
 	constructor(
 		private route: ActivatedRoute,
-		private appSettingsService: AppSettingsService
+		private appSettingsService: AppSettingsService,
+		private _sanitizer: DomSanitizer
 	) {}
 
 	ngOnInit(): void {
@@ -22,11 +34,10 @@ export class DemoComponent implements OnInit {
 			switchMap((params) =>
 				this.appSettingsService.getOneRxjs(params['rxjs'])
 			)
-		);
+		) as Subject<IRxjsList>;
+	}
 
-		//! Remover depois
-		this.actualRxjs$.subscribe((data: any) => {
-			console.log(data);
-		});
+	sanitizeVideo(url: any): any {
+		return this._sanitizer.bypassSecurityTrustResourceUrl(url);
 	}
 }

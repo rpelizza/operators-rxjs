@@ -6,19 +6,18 @@ export const rxjsList: IRxjsList[] = [
 		route: 'home',
 		parameters: [],
 		links: [],
-		videos: [],
+		video: [],
 		shortDescription: '',
 		listOfDescription: [],
 		tips: [],
-		listOfImages: [],
 	},
 	{
 		name: 'Observable',
 		route: 'observable',
 		parameters: [],
 		links: ['https://rxjs.dev/guide/observable'],
-		videos: [
-			'https://www.youtube.com/watch?v=0qdw9gK1AZ0&ab_channel=LeelaWebDev',
+		video: [
+			'https://www.youtube.com/embed/0qdw9gK1AZ0',
 		],
 		shortDescription:
 			'Um observable é um objeto único semelhante a uma promise que pode ajudar a gerenciar o código assíncrono',
@@ -30,7 +29,6 @@ export const rxjsList: IRxjsList[] = [
 			'Observables são uma forma de comunicação entre componentes, serviços e outros Observables.',
 		],
 		tips: ['custom observable', 'custom observer', 'observable próprio'],
-		listOfImages: ['observer-1', 'observer-2'],
 	},
 	{
 		name: 'Subject',
@@ -40,8 +38,8 @@ export const rxjsList: IRxjsList[] = [
 			'https://rxjs.dev/guide/subject',
 			'https://www.learnrxjs.io/learn-rxjs/subjects/subject',
 		],
-		videos: [
-			'https://www.youtube.com/watch?v=-7JPqeHeNRE&ab_channel=MoldeoInteractive',
+		video: [
+			'https://www.youtube.com/embed/-7JPqeHeNRE',
 		],
 		shortDescription:
 			'Um subject é um observable que pode ser subscrito e emitido',
@@ -59,7 +57,6 @@ export const rxjsList: IRxjsList[] = [
 			'multicast',
 			'notifica sempre que há mudanças',
 		],
-		listOfImages: ['subject-1'],
 	},
 	{
 		name: 'Behavior Subject',
@@ -79,8 +76,8 @@ export const rxjsList: IRxjsList[] = [
 			'https://www.learnrxjs.io/learn-rxjs/subjects/behaviorsubject',
 			'https://indepth.dev/reference/rxjs/subjects/behavior-subject',
 		],
-		videos: [
-			'https://www.youtube.com/watch?v=vUC-ospC-t0&ab_channel=MoldeoInteractive',
+		video: [
+			'https://www.youtube.com/embed/vUC-ospC-t0',
 		],
 		shortDescription:
 			'Um Behavior Subject é um subject que inicia com um valor inicial',
@@ -101,7 +98,6 @@ export const rxjsList: IRxjsList[] = [
 			'notifica sempre que há mudanças',
 			'iniciar com um valor',
 		],
-		listOfImages: ['behavior-subject-1'],
 	},
 	{
 		name: 'Replay Subject',
@@ -130,8 +126,8 @@ export const rxjsList: IRxjsList[] = [
 			'https://www.learnrxjs.io/learn-rxjs/subjects/replaysubject',
 			'https://indepth.dev/reference/rxjs/subjects/replay-subject',
 		],
-		videos: [
-			'https://www.youtube.com/watch?v=NVeoUrU2VS0&ab_channel=MoldeoInteractive',
+		video: [
+			'https://www.youtube.com/embed/NVeoUrU2VS0',
 		],
 		shortDescription:
 			'Reproduz ou emite valores antigos para novos assinantes',
@@ -152,7 +148,6 @@ export const rxjsList: IRxjsList[] = [
 			'valores do passado',
 			'buffer size',
 		],
-		listOfImages: ['replay-subject-1', 'replay-subject-2'],
 	},
 	{
 		name: 'Async Subject',
@@ -164,8 +159,8 @@ export const rxjsList: IRxjsList[] = [
 			'https://www.learnrxjs.io/learn-rxjs/subjects/asyncsubject',
 			'https://indepth.dev/reference/rxjs/subjects/async-subject',
 		],
-		videos: [
-			'https://www.youtube.com/watch?v=LO9OyRg92yE&ab_channel=NishaSingla',
+		video: [
+			'https://www.youtube.com/embed/LO9OyRg92yE',
 		],
 		shortDescription: 'Emite seu último valor na conclusão',
 		listOfDescription: [
@@ -180,7 +175,6 @@ export const rxjsList: IRxjsList[] = [
 			'último valor da requisição',
 			'esperar concluir',
 		],
-		listOfImages: ['async-subject-1'],
 	},
 	{
 		name: 'Audit',
@@ -199,8 +193,8 @@ export const rxjsList: IRxjsList[] = [
 			'https://rxjs.dev/api/operators/audit',
 			'https://www.learnrxjs.io/learn-rxjs/operators/filtering/audit',
 		],
-		videos: [
-			'https://www.youtube.com/watch?v=tEZFFLp21-E&ab_channel=LeelaWebDev',
+		video: [
+			'https://www.youtube.com/embed/tEZFFLp21-E',
 		],
 		shortDescription:
 			'Emite o último valor da fonte Observable após um tempo de silêncio',
@@ -219,6 +213,5 @@ export const rxjsList: IRxjsList[] = [
 			'valor mais recente',
 			'cronômetro',
 		],
-		listOfImages: ['audit-1'],
 	},
 ];

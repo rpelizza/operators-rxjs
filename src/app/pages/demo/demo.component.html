@@ -1,7 +1,110 @@
 <ng-container *ngIf="actualRxjs$ | async as item; else loading">
-	rafel
+	<div class="container-fluid pt-4">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1 class="title">{{ item?.name }}</h1>
+				<h4 class="shortDescription">{{ item?.shortDescription }}</h4>
+			</div>
+		</div>
+
+		<div class="row mt-4">
+			<div class="col-sm-12 col-md-4">
+				<mat-card>
+					<mat-card-title>Vídeo</mat-card-title>
+					<mat-card-content>
+						<div class="video-container">
+							<iframe
+								[src]="sanitizeVideo(item?.video)"
+								frameborder="0"
+								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen
+							></iframe>
+						</div>
+					</mat-card-content>
+				</mat-card>
+			</div>
+			<div class="col-sm-12 col-md-4">
+				<mat-card>
+					<mat-card-title>Algumas descrições</mat-card-title>
+					<mat-card-content>
+						<mat-list-item
+							*ngFor="let description of item?.listOfDescription"
+						>
+							<mat-icon mat-list-icon>star_border</mat-icon>
+							<div mat-line>{{ description }}</div>
+						</mat-list-item>
+					</mat-card-content>
+				</mat-card>
+			</div>
+
+			<div class="col-sm-12 col-md-4">
+				<div class="row">
+					<div
+						class="col-sm-12"
+						*ngIf="$any(item?.parameters)?.length > 0"
+					>
+						<mat-card>
+							<mat-card-title>Parâmetros</mat-card-title>
+							<mat-card-content>
+								<mat-list-item
+									*ngFor="let param of item?.parameters"
+								>
+									<mat-icon mat-list-icon
+										>add_to_queue</mat-icon
+									>
+									<div mat-line>
+										<ul>
+											<li>
+												Nome:
+												{{ param?.name }}
+											</li>
+											<li>
+												Valor padrão:
+												{{ param?.default }}
+											</li>
+											<li>
+												Obrigatório:
+												{{
+													param?.required
+														? 'sim'
+														: 'não'
+												}}
+											</li>
+											<li>
+												Tipo:
+												{{ param?.type }}
+											</li>
+											<li>
+												Descrição:
+												{{ param?.description }}
+											</li>
+										</ul>
+									</div>
+								</mat-list-item>
+							</mat-card-content>
+						</mat-card>
+					</div>
+					<div class="col-sm-12">
+						<mat-card>
+							<mat-card-title>Links</mat-card-title>
+							<mat-card-content>
+								<mat-list-item *ngFor="let link of item?.links">
+									<mat-icon mat-list-icon>link</mat-icon>
+									<div mat-line>
+										<a [href]="link" target="_blank">
+											{{ link }}
+										</a>
+									</div>
+								</mat-list-item>
+							</mat-card-content>
+						</mat-card>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </ng-container>
 
 <ng-template #loading>
-	<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+	<mat-spinner></mat-spinner>
 </ng-template>

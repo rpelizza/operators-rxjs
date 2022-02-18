@@ -3,14 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { DemoRoutingModule } from './demo-routing.module';
 import { DemoComponent } from './demo.component';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
 	declarations: [DemoComponent],
 	imports: [
 		CommonModule,
 		DemoRoutingModule,
-		MatProgressBarModule,
+		MatProgressSpinnerModule,
+		MatCardModule,
+		MatListModule,
+		MatIconModule,
 	],
 })
 export class DemoModule {}

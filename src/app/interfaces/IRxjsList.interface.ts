@@ -5,9 +5,8 @@ export interface IRxjsList {
 	route: string;
 	parameters: Parameter[];
 	links: string[];
-	videos: string[];
+	video: string[];
 	shortDescription: string;
 	listOfDescription: string[];
 	tips: string[];
-	listOfImages: string[];
 }

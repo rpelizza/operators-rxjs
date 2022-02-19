@@ -96,7 +96,7 @@ export const rxjsList: IRxjsList[] = [
 			'notifica sempre que há mudanças',
 			'iniciar com um valor',
 		],
-		gistLink: '',
+		gistLink: 'https://gist.github.com/rpelizza/e43d46dd45f865241a4de73660847122.js',
 	},
 	{
 		name: 'Replay Subject',

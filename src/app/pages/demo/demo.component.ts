@@ -87,6 +87,5 @@ export class DemoComponent implements OnInit, AfterViewInit {
 	}
 
 	example() {
-		
 	}
 }

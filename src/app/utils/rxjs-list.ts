@@ -56,7 +56,7 @@ export const rxjsList: IRxjsList[] = [
 			'multicast',
 			'notifica sempre que há mudanças',
 		],
-		gistLink: '',
+		gistLink: 'https://gist.github.com/rpelizza/c8309821f5cef13f1c1fdcc6a75f233d.js',
 	},
 	{
 		name: 'Behavior Subject',

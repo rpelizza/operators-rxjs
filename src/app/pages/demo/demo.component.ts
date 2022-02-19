@@ -20,7 +20,7 @@ import { AppSettingsService } from 'src/app/services/app-settings.service';
 })
 export class DemoComponent implements OnInit, AfterViewInit {
 	@ViewChild('iframe') iframe!: ElementRef;
-	public gistUrl: any;
+	public gistUrl: Subject<string> = new Subject<string>();
 
 	public actualRxjs$: Subject<IRxjsList> = new BehaviorSubject<IRxjsList>({
 		name: '',
@@ -46,27 +46,33 @@ export class DemoComponent implements OnInit, AfterViewInit {
 			switchMap((params) =>
 				this.appSettingsService.getOneRxjs(params['rxjs'])
 			),
-			tap((data) => (this.gistUrl = data.gistLink))
+			tap((data) => {
+				this.gistUrl.next(data.gistLink);
+				console.log(data)
+			})
 		) as Subject<IRxjsList>;
 	}
 
 	ngAfterViewInit(): void {
-		const doc =
-			this.iframe.nativeElement.contentDocument ||
-			this.iframe.nativeElement.contentElement.contentWindow;
-		const content = `
+		this.gistUrl.subscribe((url) => {
+			console.log(url);
+			const doc =
+				this.iframe.nativeElement.contentDocument ||
+				this.iframe.nativeElement.contentElement.contentWindow;
+			const content = `
 				<html>
 				<head>
 				<base target="_parent">
 				</head>
 				<body>
-				<script type="text/javascript" src="${this.gistUrl}"></script>
+				<script type="text/javascript" src="${url}"></script>
 				</body>
 			</html>
 			`;
-		doc.open();
-		doc.write(content);
-		doc.close();
+			doc.open();
+			doc.write(content);
+			doc.close();
+		});
 	}
 
 	sanitizeVideo(url: any): any {

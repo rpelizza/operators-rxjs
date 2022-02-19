@@ -40,7 +40,14 @@ export class DemoComponent implements OnInit, AfterViewInit {
 		private _sanitizer: DomSanitizer
 	) {}
 
-	ngOnInit(): void {
+	ngOnInit(): void {}
+
+	ngAfterViewInit(): void {
+		this.getData();
+		this.changeGistIframe();
+	}
+
+	getData(): void {
 		this.actualRxjs$ = this.route.queryParams.pipe(
 			tap((data) => this.appSettingsService.notify(data['rxjs'])),
 			switchMap((params) =>
@@ -48,12 +55,12 @@ export class DemoComponent implements OnInit, AfterViewInit {
 			),
 			tap((data) => {
 				this.gistUrl.next(data.gistLink);
-				console.log(data)
+				console.log(data);
 			})
 		) as Subject<IRxjsList>;
 	}
 
-	ngAfterViewInit(): void {
+	changeGistIframe(): void {
 		this.gistUrl.subscribe((url) => {
 			console.log(url);
 			const doc =

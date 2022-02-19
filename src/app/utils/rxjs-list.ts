@@ -145,7 +145,7 @@ export const rxjsList: IRxjsList[] = [
 			'valores do passado',
 			'buffer size',
 		],
-		gistLink: '',
+		gistLink: 'https://gist.github.com/rpelizza/1af6d162f750141a80aaf08caa49f541.js',
 	},
 	{
 		name: 'Async Subject',

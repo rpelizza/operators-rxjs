@@ -45,6 +45,8 @@ export class DemoComponent implements OnInit, AfterViewInit {
 	ngAfterViewInit(): void {
 		this.getData();
 		this.changeGistIframe();
+
+		this.example();
 	}
 
 	getData(): void {
@@ -82,5 +84,9 @@ export class DemoComponent implements OnInit, AfterViewInit {
 
 	sanitizeVideo(url: any): any {
 		return this._sanitizer.bypassSecurityTrustResourceUrl(url);
+	}
+
+	example() {
+		
 	}
 }

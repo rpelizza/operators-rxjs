@@ -244,7 +244,7 @@ export const rxjsList: IRxjsList[] = [
 
 		],
 		video: ['https://www.youtube.com/embed/m_YUeS8oTF4'],
-		shortDescription: '',
+		shortDescription: 'Quando você estiver interessado em ignorar um observável de origem por um tempo, use o auditTime.',
 		listOfDescription: [
 			'O auditTime ignora os valores emitidos do observável de origem por uma duração conforme especificado por outro observável e quando essa duração termina, ele emite o valor mais recente do observável de origem.',
 			'Ignora o valor da fonte por um período que é definida em milisegundos (ou a unidade de tempo determinada internamente pelo parmetro opcional scheduler), então emite o valor mais recente da fonte Observable, então repete o processo.',

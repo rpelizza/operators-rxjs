@@ -55,14 +55,12 @@ export class DemoComponent implements OnInit, AfterViewInit {
 			),
 			tap((data) => {
 				this.gistUrl.next(data.gistLink);
-				console.log(data);
 			})
 		) as Subject<IRxjsList>;
 	}
 
 	changeGistIframe(): void {
 		this.gistUrl.subscribe((url) => {
-			console.log(url);
 			const doc =
 				this.iframe.nativeElement.contentDocument ||
 				this.iframe.nativeElement.contentElement.contentWindow;

@@ -41,13 +41,14 @@ export const rxjsList: IRxjsList[] = [
 		],
 		video: ['https://www.youtube.com/embed/-7JPqeHeNRE'],
 		shortDescription:
-			'Um subject é um observable que pode ser subscrito e emitido',
+			'O Subject é um tipo especial de Observable, eles são especiais pois além de ser um Observable e um Observer, podem atuar como um EventEmitter.',
 		listOfDescription: [
 			'Um Subject é um tipo especial de Observable que permite que valores sejam disparados para muitos Observadores.',
 			'Enquanto os Observables simples são unicast (cada Observer inscrito possui uma execução independente do Observable), os Subjects são multicast. Um Subject é como um Observável, mas pode transmitir para muitos Observadores.',
 			'Um Subject é um objeto que pode ser observado, ou seja, pode ser notificado quando o valor muda',
 			'Todo subject é um observable e você pode se inscrever nele',
 			'Todo subject é um observer. É um objeto com os métodos next(v), error(e) e complete(). Para alimentar um novo valor para o Subject, basta chamar next(theValue), e ele será multicast para os Observadores cadastrados para escutar o Subject.',
+			'O Subject é um tipo especial de Observable, eles são especiais pois além de ser um Observable e um Observer, podem atuar como um EventEmitter.',
 		],
 		tips: [
 			'usado como um observable',
@@ -55,8 +56,10 @@ export const rxjsList: IRxjsList[] = [
 			'notificar mudanças',
 			'multicast',
 			'notifica sempre que há mudanças',
+			'eventEmitter',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/b6590a87725bad1551aebe144b5d1074.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/b6590a87725bad1551aebe144b5d1074.js',
 	},
 	{
 		name: 'Behavior Subject',
@@ -78,7 +81,7 @@ export const rxjsList: IRxjsList[] = [
 		],
 		video: ['https://www.youtube.com/embed/vUC-ospC-t0'],
 		shortDescription:
-			'Um Behavior Subject é um subject que inicia com um valor inicial',
+			'Um Behavior Subject é um tipo de subject que inicia com um valor inicial',
 		listOfDescription: [
 			'Em um Behavior Subject, o primeiro valor enviado é o valor inicial.',
 			'Requer um valor inicial e emite o valor atual para novos subscribers.',
@@ -96,7 +99,8 @@ export const rxjsList: IRxjsList[] = [
 			'notifica sempre que há mudanças',
 			'iniciar com um valor',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/e43d46dd45f865241a4de73660847122.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/e43d46dd45f865241a4de73660847122.js',
 	},
 	{
 		name: 'Replay Subject',
@@ -127,11 +131,13 @@ export const rxjsList: IRxjsList[] = [
 		],
 		video: ['https://www.youtube.com/embed/NVeoUrU2VS0'],
 		shortDescription:
-			'Reproduz ou emite valores antigos para novos assinantes',
+			'Reproduz ou emite a quantidade de valores definida no buffer',
 		listOfDescription: [
 			'Um ReplaySubject é semelhante a um BehaviorSubject, pois pode enviar valores antigos para novos assinantes, mas também pode gravar uma parte da execução Observable',
 			'Um ReplaySubject grava vários valores da execução Observable e os reproduz para novos assinantes.',
 			'Reproduz ou emite valores antigos para novos assinantes',
+			'O ReplaySubject precisa, obrigatoriamente, iniciar com um valor.',
+			'Reproduz ou emite a quantidade de valores definida no buffer',
 			'O ReplaySubject é um subject que permite reproduzir vários valores do passado para um novo subscriber.',
 			'ReplaySubject é uma variante de um Subject que mantém um cache de valores anteriores emitidos por uma fonte observável e os envia para todos os novos observadores imediatamente na assinatura.',
 			'ReplaySubject irá reproduzir a sequência de valores em cache mesmo se o observador assinar muito mais tarde do que os valores foram armazenados em cache.',
@@ -144,8 +150,13 @@ export const rxjsList: IRxjsList[] = [
 			'vida útil do buffer',
 			'valores do passado',
 			'buffer size',
+			'armazenar valores',
+			'armazenar dados',
+			'buffer',
+			'salvar em cache',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/1af6d162f750141a80aaf08caa49f541.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/1af6d162f750141a80aaf08caa49f541.js',
 	},
 	{
 		name: 'Async Subject',
@@ -177,7 +188,8 @@ export const rxjsList: IRxjsList[] = [
 			'aguardar conclusão da requisição',
 			'aguardar conclusão da execução Observable',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/12e509519fce366da3c30e4f8cf7afdd.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/12e509519fce366da3c30e4f8cf7afdd.js',
 	},
 	{
 		name: 'Audit',
@@ -214,7 +226,8 @@ export const rxjsList: IRxjsList[] = [
 			'valor mais recente',
 			'cronômetro',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/2ed7850d7b2d52b853208595ebff50b2.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/2ed7850d7b2d52b853208595ebff50b2.js',
 	},
 	{
 		name: 'Audit Time',
@@ -241,10 +254,10 @@ export const rxjsList: IRxjsList[] = [
 			'https://rxjs.dev/api/operators/auditTime',
 			'https://www.learnrxjs.io/learn-rxjs/operators/filtering/audittime',
 			'https://indepth.dev/reference/rxjs/operators/audit-time',
-
 		],
 		video: ['https://www.youtube.com/embed/m_YUeS8oTF4'],
-		shortDescription: 'Quando você estiver interessado em ignorar um observável de origem por um tempo, use o auditTime.',
+		shortDescription:
+			'Quando você estiver interessado em ignorar um observável de origem por um tempo, use o auditTime.',
 		listOfDescription: [
 			'O auditTime ignora os valores emitidos do observável de origem por uma duração conforme especificado por outro observável e quando essa duração termina, ele emite o valor mais recente do observável de origem.',
 			'Ignora o valor da fonte por um período que é definida em milisegundos (ou a unidade de tempo determinada internamente pelo parmetro opcional scheduler), então emite o valor mais recente da fonte Observable, então repete o processo.',
@@ -263,8 +276,9 @@ export const rxjsList: IRxjsList[] = [
 			'agendador',
 			'agendador de tempo',
 			'agendador de tempo para o silenciamento',
-			'tempo para o silenciamento'
+			'tempo para o silenciamento',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/6f01960945e5c3d1f7bebdf1f5bdd4bc.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/6f01960945e5c3d1f7bebdf1f5bdd4bc.js',
 	},
 ];

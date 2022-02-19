@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+	AfterViewInit,
+	Component,
+	ElementRef,
+	OnInit,
+	ViewChild,
+	ViewEncapsulation,
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject, Subject, switchMap, tap } from 'rxjs';
@@ -9,8 +16,12 @@ import { AppSettingsService } from 'src/app/services/app-settings.service';
 	selector: 'app-demo',
 	templateUrl: './demo.component.html',
 	styleUrls: ['./demo.component.scss'],
+	encapsulation: ViewEncapsulation.None,
 })
-export class DemoComponent implements OnInit {
+export class DemoComponent implements OnInit, AfterViewInit {
+	@ViewChild('iframe') iframe!: ElementRef;
+	public gistUrl: any;
+
 	public actualRxjs$: Subject<IRxjsList> = new BehaviorSubject<IRxjsList>({
 		name: '',
 		route: '',
@@ -20,6 +31,7 @@ export class DemoComponent implements OnInit {
 		shortDescription: '',
 		listOfDescription: [],
 		tips: [],
+		gistLink: '',
 	});
 
 	constructor(
@@ -33,8 +45,28 @@ export class DemoComponent implements OnInit {
 			tap((data) => this.appSettingsService.notify(data['rxjs'])),
 			switchMap((params) =>
 				this.appSettingsService.getOneRxjs(params['rxjs'])
-			)
+			),
+			tap((data) => (this.gistUrl = data.gistLink))
 		) as Subject<IRxjsList>;
+	}
+
+	ngAfterViewInit(): void {
+		const doc =
+			this.iframe.nativeElement.contentDocument ||
+			this.iframe.nativeElement.contentElement.contentWindow;
+		const content = `
+				<html>
+				<head>
+				<base target="_parent">
+				</head>
+				<body>
+				<script type="text/javascript" src="${this.gistUrl}"></script>
+				</body>
+			</html>
+			`;
+		doc.open();
+		doc.write(content);
+		doc.close();
 	}
 
 	sanitizeVideo(url: any): any {

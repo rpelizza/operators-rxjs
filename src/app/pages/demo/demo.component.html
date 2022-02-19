@@ -23,19 +23,6 @@
 					</mat-card-content>
 				</mat-card>
 			</div>
-			<div class="col-sm-12 col-md-4">
-				<mat-card>
-					<mat-card-title>Algumas descrições</mat-card-title>
-					<mat-card-content>
-						<mat-list-item
-							*ngFor="let description of item?.listOfDescription"
-						>
-							<mat-icon mat-list-icon>star_border</mat-icon>
-							<div mat-line>{{ description }}</div>
-						</mat-list-item>
-					</mat-card-content>
-				</mat-card>
-			</div>
 
 			<div class="col-sm-12 col-md-4">
 				<div class="row">
@@ -86,6 +73,23 @@
 					</div>
 					<div class="col-sm-12">
 						<mat-card>
+							<mat-card-title>Algumas descrições</mat-card-title>
+							<mat-card-content>
+								<mat-list-item
+									*ngFor="
+										let description of item?.listOfDescription
+									"
+								>
+									<mat-icon mat-list-icon
+										>star_border</mat-icon
+									>
+									<div mat-line>{{ description }}</div>
+								</mat-list-item>
+							</mat-card-content>
+						</mat-card>
+					</div>
+					<div class="col-sm-12">
+						<mat-card>
 							<mat-card-title>Links</mat-card-title>
 							<mat-card-content>
 								<mat-list-item *ngFor="let link of item?.links">
@@ -100,6 +104,17 @@
 						</mat-card>
 					</div>
 				</div>
+			</div>
+
+			<div class="col-sm-12 col-md-4">
+				<mat-card>
+					<mat-card-title>Código</mat-card-title>
+					<mat-card-content>
+						<div class="iframe-container">
+							<iframe #iframe type="text/javascript"></iframe> 
+						</div>
+					</mat-card-content>
+				</mat-card>
 			</div>
 		</div>
 	</div>

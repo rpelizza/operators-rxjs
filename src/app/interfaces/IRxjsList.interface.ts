@@ -9,4 +9,5 @@ export interface IRxjsList {
 	shortDescription: string;
 	listOfDescription: string[];
 	tips: string[];
+	gistLink: string;
 }

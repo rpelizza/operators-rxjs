@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 	myControl = new FormControl();
 	filteredOptions: Observable<IRxjsList[]> | undefined;
 
-	public title: string = 'operators-rxjs';
+	public title: string = 'rxjs';
 	public items: IRxjsList[] = [];
 	public defaultSelected: string = '';
 

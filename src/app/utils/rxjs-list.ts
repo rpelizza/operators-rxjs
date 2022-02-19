@@ -216,4 +216,55 @@ export const rxjsList: IRxjsList[] = [
 		],
 		gistLink: 'https://gist.github.com/rpelizza/2ed7850d7b2d52b853208595ebff50b2.js',
 	},
+	{
+		name: 'Audit Time',
+		route: 'audit-time',
+		parameters: [
+			{
+				name: 'duration',
+				default: '',
+				required: true,
+				type: 'number',
+				description:
+					'Tempo de espera antes de emitir o valor de origem mais recente, medido em milissegundos ou a unidade de tempo determinada internamente pelo agendador opcional.',
+			},
+			{
+				name: 'scheduler',
+				default: 'async',
+				required: false,
+				type: 'Observable',
+				description:
+					'Um Observable que define o agendador de tempo para o tempo de espera.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/auditTime',
+			'https://www.learnrxjs.io/learn-rxjs/operators/filtering/audittime',
+			'https://indepth.dev/reference/rxjs/operators/audit-time',
+
+		],
+		video: ['https://www.youtube.com/embed/m_YUeS8oTF4'],
+		shortDescription: '',
+		listOfDescription: [
+			'O auditTime ignora os valores emitidos do observável de origem por uma duração conforme especificado por outro observável e quando essa duração termina, ele emite o valor mais recente do observável de origem.',
+			'Ignora o valor da fonte por um período que é definida em milisegundos (ou a unidade de tempo determinada internamente pelo parmetro opcional scheduler), então emite o valor mais recente da fonte Observable, então repete o processo.',
+			'Quando você estiver interessado em ignorar um observável de origem por um tempo, use o auditTime.',
+			'AuditTime garante que os valores serão emitidos regularmente, mas não com uma frequência maior do que o intervalo configurado.',
+			'Quando o primeiro valor é capturado, o timer é iniciado. Quando o timer é ativado, o valor mais recente é emitido e o timer é reiniciado.',
+			'Os exemplos mais comuns de uso são eventos DOM, como  scrolling, resizing, eventos do mouse e teclas precionadas, e eventos de tempo, como o tempo de espera para uma requisição HTTP.',
+		],
+		tips: [
+			'duração do silenciamento',
+			'silenciamento',
+			'silenciar durante um tempo',
+			'valor mais recente',
+			'cronômetro',
+			'período de silenciamento',
+			'agendador',
+			'agendador de tempo',
+			'agendador de tempo para o silenciamento',
+			'tempo para o silenciamento'
+		],
+		gistLink: 'https://gist.github.com/rpelizza/6f01960945e5c3d1f7bebdf1f5bdd4bc.js',
+	},
 ];

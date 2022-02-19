@@ -160,6 +160,7 @@ export const rxjsList: IRxjsList[] = [
 		video: ['https://www.youtube.com/embed/LO9OyRg92yE'],
 		shortDescription: 'Emite seu último valor na conclusão',
 		listOfDescription: [
+			'O AsyncSubject é um subject que armazena valores em uma fila interna, mas só emite o último valor que recebeu.',
 			'AsyncSubject precisa esperar até que o observável de origem seja concluído antes de identificar o valor atual como o mais recente e só então emiti-lo para assinantes existentes ou futuros.',
 			'Esse comportamento significa que você sempre pode obter diretamente o último valor emitido do AsyncSubject, mesmo que o assinante assine muito mais tarde do que o valor foi armazenado.',
 			'Emite seu último valor na conclusão',
@@ -170,8 +171,13 @@ export const rxjsList: IRxjsList[] = [
 			'último valor da execução Observable',
 			'último valor da requisição',
 			'esperar concluir',
+			'esperar concluir a requisição',
+			'esperar concluir a execução Observable',
+			'aguardar conclusão',
+			'aguardar conclusão da requisição',
+			'aguardar conclusão da execução Observable',
 		],
-		gistLink: '',
+		gistLink: 'https://gist.github.com/rpelizza/12e509519fce366da3c30e4f8cf7afdd.js',
 	},
 	{
 		name: 'Audit',

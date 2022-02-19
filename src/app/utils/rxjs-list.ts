@@ -214,6 +214,6 @@ export const rxjsList: IRxjsList[] = [
 			'valor mais recente',
 			'cronômetro',
 		],
-		gistLink: '',
+		gistLink: 'https://gist.github.com/rpelizza/2ed7850d7b2d52b853208595ebff50b2.js',
 	},
 ];

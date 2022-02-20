@@ -281,4 +281,40 @@ export const rxjsList: IRxjsList[] = [
 		gistLink:
 			'https://gist.github.com/rpelizza/6f01960945e5c3d1f7bebdf1f5bdd4bc.js',
 	},
+	{
+		name: 'Buffer',
+		route: 'buffer',
+		parameters: [
+			{
+				name: 'closingNotifier',
+				default: '',
+				required: true,
+				type: 'Observable',
+				description:
+					'Um observable notifica o buffer para emitir o(s) valor(es) mais recente(s) armazenado(s) em cache. Emite como um array de valores.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/buffer',
+			'https://www.learnrxjs.io/learn-rxjs/operators/transformation/buffer',
+			'https://indepth.dev/reference/rxjs/operators/buffer',
+		],
+		video: ['https://www.youtube.com/embed/LsSOiZH29js'],
+		shortDescription:
+			'Coleta valores emitidos da fonte observável no cache sem passá-los para um observer até que o observável notificador (closingNotifier) seja disparado (buffering).',
+		listOfDescription: [
+			'Um observable (closingNotifier) notifica o buffer para emitir o(s) valor(es) mais recente(s) armazenado(s) em cache. Emite como um array de valores.',
+			'O buffer envia os valores armazenados em cache como um array, reinicia e inicia o buffer novamente até que o observable fornecido (closingNotifier) seja emitido mais uma vez.',
+			'O buffer pode enviar um array vazio para o observer se o observable emissor (closingNotifier) emitir um valor e o cache estiver vazio.',
+			'Coleta valores do passado como um array e emite esse array quando outro observable (closingNotifier) for emitido.',
+		],
+		tips: [
+			'array de valores',
+			'buffer',
+			'buffer de valores',
+			'buffer de valores emitidos',
+		],
+		gistLink:
+			'https://gist.github.com/rpelizza/8b3b2a4e16e70cbb4ee79f11d222ec01.js',
+	},
 ];

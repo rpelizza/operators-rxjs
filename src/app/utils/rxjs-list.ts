@@ -235,7 +235,7 @@ export const rxjsList: IRxjsList[] = [
 		parameters: [
 			{
 				name: 'duration',
-				default: '',
+				default: '-',
 				required: true,
 				type: 'number',
 				description:
@@ -287,7 +287,7 @@ export const rxjsList: IRxjsList[] = [
 		parameters: [
 			{
 				name: 'closingNotifier',
-				default: '',
+				default: '-',
 				required: true,
 				type: 'Observable',
 				description:

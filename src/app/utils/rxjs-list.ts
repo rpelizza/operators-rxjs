@@ -317,4 +317,44 @@ export const rxjsList: IRxjsList[] = [
 		gistLink:
 			'https://gist.github.com/rpelizza/8b3b2a4e16e70cbb4ee79f11d222ec01.js',
 	},
+	{
+		name: 'BufferCount',
+		route: 'buffer-count',
+		parameters: [
+			{
+				name: 'BufferSize',
+				default: 'undefined',
+				required: true,
+				type: 'number',
+				description: 'O tamanho máximo do buffer emitido',
+			},
+			{
+				name: 'startBufferEvery',
+				default: 'undefined',
+				required: false,
+				type: 'number',
+				description:
+					'Intervalo para iniciar um novo buffer. Por exemplo, se startBufferEvery for 2, um novo buffer será iniciado em todos os outros valores da origem. Um novo buffer é iniciado no início da origem por padrão.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/bufferCount',
+			'https://www.learnrxjs.io/learn-rxjs/operators/transformation/buffercount',
+		],
+		video: ['https://www.youtube.com/embed/kRNiSIAK1zs'],
+		shortDescription:
+			'Coleta valores do passado como um array e emite esse array somente quando seu tamanho atingir o bufferSize especificado.',
+		listOfDescription: [
+			'Armazena um número de valores da fonte Observable por bufferSize, em seguida, emite o buffer e o limpa, e inicia um novo buffer a cada valor startBufferEvery.',
+			'O buffer é iniciado no início da origem por padrão.',
+			'Se startBufferEvery não for fornecido ou for nulo, novos buffers serão iniciados imediatamente no início da origem e quando cada buffer for fechado e emitido.',
+
+		],
+		tips: [
+			'buffer de valores emitidos por tamanho',
+			'buffer de tamanho',
+			'valor de tempo em tempo',			
+		],
+		gistLink: 'https://gist.github.com/rpelizza/0344fa09ad4a6e1e1b8bbcb3a64e3b44.js',
+	},
 ];

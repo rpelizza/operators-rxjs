@@ -318,7 +318,7 @@ export const rxjsList: IRxjsList[] = [
 			'https://gist.github.com/rpelizza/8b3b2a4e16e70cbb4ee79f11d222ec01.js',
 	},
 	{
-		name: 'Buffer Count',
+		name: 'BufferCount',
 		route: 'buffer-count',
 		parameters: [
 			{
@@ -358,7 +358,7 @@ export const rxjsList: IRxjsList[] = [
 			'https://gist.github.com/rpelizza/0344fa09ad4a6e1e1b8bbcb3a64e3b44.js',
 	},
 	{
-		name: 'Buffer Time',
+		name: 'BufferTime',
 		route: 'buffer-time',
 		parameters: [
 			{
@@ -399,12 +399,52 @@ export const rxjsList: IRxjsList[] = [
 			'Se maxBufferSize for fornecido, o buffer não pode exceder o tamanho máximo (maxBufferSize).',
 			'Quando o argumento opcional maxBufferSize for especificado, o buffer será fechado após o tempo especificado em bufferTimeSpan ou quando contiver o máximo de elementos informados no maxBufferSize.',
 			'Esse operador é semelhante ao buffer, mas em vez de usar um observável para indicação de quando liberar o buffer, ele usa um intervalo de tempo.',
-			'Um comportamento interessante do operador bufferTime é que ele pode enviar um conjunto vazio de valores para o observer se o intervalo de tempo decorrer enquanto o cache estiver vazio.'
+			'Um comportamento interessante do operador bufferTime é que ele pode enviar um conjunto vazio de valores para o observer se o intervalo de tempo decorrer enquanto o cache estiver vazio.',
 		],
 		tips: [
 			'buffer de valores emitidos por tempo',
 			'buffer de tempo em tempo',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/f08886d8935d035323bf57377aa36f79.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/f08886d8935d035323bf57377aa36f79.js',
+	},
+	{
+		name: 'BufferToggle',
+		route: 'buffer-toggle',
+		parameters: [
+			{
+				name: 'openings',
+				default: 'undefined',
+				required: true,
+				type: 'Observable',
+				description:
+					'Uma promise ou observable de notificação para iniciar o buffer',
+			},
+			{
+				name: 'closingSelector',
+				default: 'undefined',
+				required: true,
+				type: 'function',
+				description:
+					'Uma função que pega o valor emitido pelo observable openings e retorna um subscrible ou promise, que, ao emitir, sinaliza que o buffer deve ser emitido e limpo.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/bufferToggle',
+			'https://www.learnrxjs.io/learn-rxjs/operators/transformation/buffertoggle',
+		],
+		video: ['https://www.youtube.com/embed/vtLmd1avPrc'],
+		shortDescription:
+			'Ative para começar a capturar valores e desative para parar e emitir os valores armazezados no buffer.',
+		listOfDescription: [
+			'Começa a capturar somente quando o observable openings emitir um valor e chama a função do closingSelector para determinar quando o buffer deve ser fechado e limpo.',
+		],
+		tips: [
+			'toggle para iniciar o buffer',
+			'toggle para parar o buffer',
+			'buffer de valores emitidos por toggle',
+			'buffer de toggle',
+		],
+		gistLink: 'https://gist.github.com/rpelizza/2d9c61bdddc6506915fcbe6236bb961b.js',
 	},
 ];

@@ -318,7 +318,7 @@ export const rxjsList: IRxjsList[] = [
 			'https://gist.github.com/rpelizza/8b3b2a4e16e70cbb4ee79f11d222ec01.js',
 	},
 	{
-		name: 'BufferCount',
+		name: 'Buffer Count',
 		route: 'buffer-count',
 		parameters: [
 			{
@@ -348,13 +348,63 @@ export const rxjsList: IRxjsList[] = [
 			'Armazena um número de valores da fonte Observable por bufferSize, em seguida, emite o buffer e o limpa, e inicia um novo buffer a cada valor startBufferEvery.',
 			'O buffer é iniciado no início da origem por padrão.',
 			'Se startBufferEvery não for fornecido ou for nulo, novos buffers serão iniciados imediatamente no início da origem e quando cada buffer for fechado e emitido.',
-
 		],
 		tips: [
 			'buffer de valores emitidos por tamanho',
 			'buffer de tamanho',
-			'valor de tempo em tempo',			
+			'valor de tempo em tempo',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/0344fa09ad4a6e1e1b8bbcb3a64e3b44.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/0344fa09ad4a6e1e1b8bbcb3a64e3b44.js',
+	},
+	{
+		name: 'Buffer Time',
+		route: 'buffer-time',
+		parameters: [
+			{
+				name: 'bufferTimeSpan',
+				default: 'undefined',
+				required: true,
+				type: 'number',
+				description:
+					'A quantidade de tempo para preencher cada array do buffer.',
+			},
+			{
+				name: 'bufferCreationInterval',
+				default: 'undefined',
+				required: false,
+				type: 'number',
+				description: 'Tempo para a criaçao/inicialização do buffer.',
+			},
+			{
+				name: 'maxBufferSize',
+				default: 'undefined',
+				required: false,
+				type: 'number',
+				description: 'Tamanho total do buffer.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/bufferTime',
+			'https://www.learnrxjs.io/learn-rxjs/operators/transformation/buffertime',
+			'https://indepth.dev/reference/rxjs/operators/buffer-time',
+		],
+		video: ['https://www.youtube.com/embed/M1Aw6GnUDH8'],
+		shortDescription:
+			'Coleta valores do passado como um array e emite esses arrays periodicamente.',
+		listOfDescription: [
+			'Armazena em buffer os valores durante uma duração de tempo específica informada no bufferTimeSpan',
+			'A menos que o argumento opcional bufferCreationInterval seja fornecido, ele emite e redefine o buffer a cada milissegundos de acordo com o bufferTimeSpan',
+			'Se bufferCreationInterval for fornecido, este operador abre o buffer a cada milissegundo (bufferCreationInterval) e fecha (emite e redefine) o buffer a cada milissegundo (bufferTimeSpan).',
+			'Se maxBufferSize for fornecido, o buffer não pode exceder o tamanho máximo (maxBufferSize).',
+			'Quando o argumento opcional maxBufferSize for especificado, o buffer será fechado após o tempo especificado em bufferTimeSpan ou quando contiver o máximo de elementos informados no maxBufferSize.',
+			'Esse operador é semelhante ao buffer, mas em vez de usar um observável para indicação de quando liberar o buffer, ele usa um intervalo de tempo.',
+			'Um comportamento interessante do operador bufferTime é que ele pode enviar um conjunto vazio de valores para o observer se o intervalo de tempo decorrer enquanto o cache estiver vazio.'
+		],
+		tips: [
+			'buffer de valores emitidos por tempo',
+			'buffer de tempo em tempo',
+		],
+		gistLink: 'https://gist.github.com/rpelizza/f08886d8935d035323bf57377aa36f79.js',
 	},
 ];

@@ -564,4 +564,32 @@ export const rxjsList: IRxjsList[] = [
 		gistLink:
 			'https://gist.github.com/rpelizza/7073988ba34cba1e63488c73e4770e83.js',
 	},
+	{
+		name: 'combineLatestWith',
+		route: 'combine-latest-with',
+		category: CategoryEnum.Combination,
+		parameters: [
+			{
+				name: 'otherSources',
+				default: 'undefined',
+				required: true,
+				type: 'Observable',
+				description:
+					'O Observable que será combinado com o Observable de origem.',
+			},
+		],
+		links: ['https://rxjs.dev/api/operators/combineLatestWith'],
+		video: ['https://www.youtube.com/embed/yFGbzTXyDdY'],
+		shortDescription:
+			'Este é um operador útil para calcular valores com base em entradas alteradas.',
+		listOfDescription: [
+			'Retorna um observável que, quando inscrito, se inscreverá no observável de origem e todas as fontes fornecidas como argumentos.',
+			'Quando qualquer um dos observáveis de origem emitir, o observável de saída emitirá os valores mais recentes de cada um deles.',
+			'Assim que todas as fontes emitirem pelo menos um valor, todos os valores mais recentes serão emitidos como um array.',
+		],
+		tips: [
+			'Combinação de valores com base em entradas alteradas',
+		],
+		gistLink: 'https://gist.github.com/rpelizza/ea2b557476e2f05f0a526a323e6784c6.js',
+	},
 ];

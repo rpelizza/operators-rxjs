@@ -445,6 +445,43 @@ export const rxjsList: IRxjsList[] = [
 			'buffer de valores emitidos por toggle',
 			'buffer de toggle',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/2d9c61bdddc6506915fcbe6236bb961b.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/2d9c61bdddc6506915fcbe6236bb961b.js',
+	},
+	{
+		name: 'BufferWhen',
+		route: 'buffer-when',
+		parameters: [
+			{
+				name: 'closingSelector',
+				default: 'undefined',
+				required: true,
+				type: 'function',
+				description:
+					'Uma função que não recebe argumentos e retorna um Observable que sinaliza o fechamento do buffer.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/bufferWhen',
+			'https://www.learnrxjs.io/learn-rxjs/operators/transformation/bufferwhen',
+			'https://indepth.dev/reference/rxjs/operators/buffer-when',
+		],
+		video: ['https://www.youtube.com/embed/D2Jo65eAdz8'],
+		shortDescription:
+			'Coleta todos os valores até o closingSelector ser chamado para determinar quando o buffer deve ser fechado.',
+		listOfDescription: [
+			'Coleta todos os valores do passado como um array. Quando começar a coletar, é chamado uma função (closingSelector) para determinar quando o buffer deve ser fechado e limpo e reiniciar a coleta.',
+			'Coleta os valores emitidos da fonte observável para o cache sem passá-los para um observador até que o observável do notificador emita (buffering).',
+			'O buffer então envia os valores armazenados em cache como um array, reinicia e inicia o buffer novamente até que o observável fornecido (closingSelector) seja emitido mais uma vez.',
+			'Este operador é muito semelhante ao buffer, mas uma vez que o buffer é liberado, ele cancela a assinatura do observável do notificador e será reassinado assim que um novo valor chegar.',
+			'Um comportamento interessante do operador bufferWhen é que ele pode enviar um conjunto vazio de valores para o observador se o observável notificador emitir um valor e o cache estiver vazio.',
+			'Coleta valores do passado como um array. Quando ele começa a coletar valores, ele chama uma função que retorna um Observable que informa quando fechar o buffer e reiniciar a coleta.'
+		],
+		tips: [
+			'buffer por um período de tempo',
+			'até fechar',
+			'buffer de valores emitidos por tempo',
+		],
+		gistLink: 'https://gist.github.com/rpelizza/3b9f46674b16a206d47c301ba168f577.js',
 	},
 ];

@@ -3,6 +3,7 @@ import { Parameter } from './parameter.interface';
 export interface IRxjsList {
 	name: string;
 	route: string;
+	category: string;
 	parameters: Parameter[];
 	links: string[];
 	video: string[];

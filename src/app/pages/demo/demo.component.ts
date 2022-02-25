@@ -25,6 +25,7 @@ export class DemoComponent implements OnInit, AfterViewInit {
 	public actualRxjs$: Subject<IRxjsList> = new BehaviorSubject<IRxjsList>({
 		name: '',
 		route: '',
+		category: '',
 		parameters: [],
 		links: [],
 		video: [],

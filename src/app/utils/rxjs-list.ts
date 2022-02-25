@@ -4,6 +4,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Início',
 		route: 'home',
+		category: '',
 		parameters: [],
 		links: [],
 		video: [],
@@ -15,6 +16,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Observable',
 		route: 'observable',
+		category: 'Observable',
 		parameters: [],
 		links: ['https://rxjs.dev/guide/observable'],
 		video: ['https://www.youtube.com/embed/0qdw9gK1AZ0'],
@@ -34,6 +36,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Subject',
 		route: 'subject',
+		category: 'Subject',
 		parameters: [],
 		links: [
 			'https://rxjs.dev/guide/subject',
@@ -64,6 +67,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Behavior Subject',
 		route: 'behavior-subject',
+		category: 'Subject',
 		parameters: [
 			{
 				name: 'Valor inicial',
@@ -105,6 +109,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Replay Subject',
 		route: 'replay-subject',
+		category: 'Subject',
 		parameters: [
 			{
 				name: 'BufferSize',
@@ -161,6 +166,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Async Subject',
 		route: 'async-subject',
+		category: 'Subject',
 		parameters: [],
 		links: [
 			'https://rxjs.dev/guide/subject',
@@ -194,6 +200,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Audit',
 		route: 'audit',
+		category: 'Filtro',
 		parameters: [
 			{
 				name: 'durationSelector',
@@ -232,6 +239,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Audit Time',
 		route: 'audit-time',
+		category: 'Filtro',
 		parameters: [
 			{
 				name: 'duration',
@@ -284,6 +292,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Buffer',
 		route: 'buffer',
+		category: 'Transformação',
 		parameters: [
 			{
 				name: 'closingNotifier',
@@ -320,6 +329,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'BufferCount',
 		route: 'buffer-count',
+		category: 'Transformação',
 		parameters: [
 			{
 				name: 'BufferSize',
@@ -360,6 +370,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'BufferTime',
 		route: 'buffer-time',
+		category: 'Transformação',
 		parameters: [
 			{
 				name: 'bufferTimeSpan',
@@ -411,6 +422,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'BufferToggle',
 		route: 'buffer-toggle',
+		category: 'Transformação',
 		parameters: [
 			{
 				name: 'openings',
@@ -451,6 +463,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'BufferWhen',
 		route: 'buffer-when',
+		category: 'Transformação',
 		parameters: [
 			{
 				name: 'closingSelector',
@@ -488,6 +501,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'catchError',
 		route: 'catch-error',
+		category: 'Manipulação de erros',
 		parameters: [
 			{
 				name: 'selector',

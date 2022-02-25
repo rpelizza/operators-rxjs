@@ -475,13 +475,48 @@ export const rxjsList: IRxjsList[] = [
 			'O buffer então envia os valores armazenados em cache como um array, reinicia e inicia o buffer novamente até que o observável fornecido (closingSelector) seja emitido mais uma vez.',
 			'Este operador é muito semelhante ao buffer, mas uma vez que o buffer é liberado, ele cancela a assinatura do observável do notificador e será reassinado assim que um novo valor chegar.',
 			'Um comportamento interessante do operador bufferWhen é que ele pode enviar um conjunto vazio de valores para o observador se o observável notificador emitir um valor e o cache estiver vazio.',
-			'Coleta valores do passado como um array. Quando ele começa a coletar valores, ele chama uma função que retorna um Observable que informa quando fechar o buffer e reiniciar a coleta.'
+			'Coleta valores do passado como um array. Quando ele começa a coletar valores, ele chama uma função que retorna um Observable que informa quando fechar o buffer e reiniciar a coleta.',
 		],
 		tips: [
 			'buffer por um período de tempo',
 			'até fechar',
 			'buffer de valores emitidos por tempo',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/3b9f46674b16a206d47c301ba168f577.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/3b9f46674b16a206d47c301ba168f577.js',
+	},
+	{
+		name: 'catchError',
+		route: 'catch-error',
+		parameters: [
+			{
+				name: 'selector',
+				default: 'undefined',
+				required: true,
+				type: 'function',
+				description:
+					'Uma função que receber como argumento "err" e retorna um Observable.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/catchError',
+			'https://www.learnrxjs.io/learn-rxjs/operators/error_handling/catch',
+			'https://indepth.dev/reference/rxjs/operators/catch-error',
+		],
+		video: ['https://www.youtube.com/embed/yv_Qxk7u_YY'],
+		shortDescription: 'Lide com erros em uma sequência observável',
+		listOfDescription: [
+			'Apenas ouve o canal de erro e ignora as notificações.',
+			'Se o erro for capturado, o operador chama a função de seleção (selector) para gerar um novo Observable.',
+			'Lida com erros do observável de origem e os mapeia para um novo observável.',
+			'O erro também pode ser relançado ou um novo erro pode ser lançado para emitir um erro do resultado',
+			'Espera-se que a função retorne um observável que substituirá o observável de origem original.',
+		],
+		tips: [
+			'captura os erros e lança um novo erro',
+			'gera um novo observable através do erro',
+			'captura erro no observable',
+		],
+		gistLink: 'https://gist.github.com/rpelizza/af181db39089dcb06b357d8e877537dd.js',
 	},
 ];

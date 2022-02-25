@@ -1,3 +1,4 @@
+import { CategoryEnum } from '../enums/category';
 import { IRxjsList } from '../interfaces/IRxjsList.interface';
 
 export const rxjsList: IRxjsList[] = [
@@ -16,7 +17,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Observable',
 		route: 'observable',
-		category: 'Observable',
+		category: CategoryEnum.Observable,
 		parameters: [],
 		links: ['https://rxjs.dev/guide/observable'],
 		video: ['https://www.youtube.com/embed/0qdw9gK1AZ0'],
@@ -36,7 +37,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Subject',
 		route: 'subject',
-		category: 'Subject',
+		category: CategoryEnum.Subject,
 		parameters: [],
 		links: [
 			'https://rxjs.dev/guide/subject',
@@ -67,7 +68,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Behavior Subject',
 		route: 'behavior-subject',
-		category: 'Subject',
+		category: CategoryEnum.Subject,
 		parameters: [
 			{
 				name: 'Valor inicial',
@@ -109,7 +110,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Replay Subject',
 		route: 'replay-subject',
-		category: 'Subject',
+		category: CategoryEnum.Subject,
 		parameters: [
 			{
 				name: 'BufferSize',
@@ -166,7 +167,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Async Subject',
 		route: 'async-subject',
-		category: 'Subject',
+		category: CategoryEnum.Subject,
 		parameters: [],
 		links: [
 			'https://rxjs.dev/guide/subject',
@@ -200,7 +201,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Audit',
 		route: 'audit',
-		category: 'Filtro',
+		category: CategoryEnum.Filtering,
 		parameters: [
 			{
 				name: 'durationSelector',
@@ -239,7 +240,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Audit Time',
 		route: 'audit-time',
-		category: 'Filtro',
+		category: CategoryEnum.Filtering,
 		parameters: [
 			{
 				name: 'duration',
@@ -292,7 +293,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'Buffer',
 		route: 'buffer',
-		category: 'Transformação',
+		category: CategoryEnum.Transformation,
 		parameters: [
 			{
 				name: 'closingNotifier',
@@ -329,7 +330,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'BufferCount',
 		route: 'buffer-count',
-		category: 'Transformação',
+		category: CategoryEnum.Transformation,
 		parameters: [
 			{
 				name: 'BufferSize',
@@ -370,7 +371,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'BufferTime',
 		route: 'buffer-time',
-		category: 'Transformação',
+		category: CategoryEnum.Transformation,
 		parameters: [
 			{
 				name: 'bufferTimeSpan',
@@ -422,7 +423,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'BufferToggle',
 		route: 'buffer-toggle',
-		category: 'Transformação',
+		category: CategoryEnum.Transformation,
 		parameters: [
 			{
 				name: 'openings',
@@ -463,7 +464,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'BufferWhen',
 		route: 'buffer-when',
-		category: 'Transformação',
+		category: CategoryEnum.Transformation,
 		parameters: [
 			{
 				name: 'closingSelector',
@@ -501,7 +502,7 @@ export const rxjsList: IRxjsList[] = [
 	{
 		name: 'catchError',
 		route: 'catch-error',
-		category: 'Manipulação de erros',
+		category: CategoryEnum.ErrorHandling,
 		parameters: [
 			{
 				name: 'selector',
@@ -531,6 +532,36 @@ export const rxjsList: IRxjsList[] = [
 			'gera um novo observable através do erro',
 			'captura erro no observable',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/af181db39089dcb06b357d8e877537dd.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/af181db39089dcb06b357d8e877537dd.js',
+	},
+	{
+		name: 'CombineLatestAll',
+		route: 'combine-latest-all',
+		category: CategoryEnum.Combination,
+		parameters: [
+			{
+				name: 'project',
+				default: 'undefined',
+				required: false,
+				type: 'function',
+				description:
+					'Função opcional para mapear os valores mais recentes de cada Observable interno em um novo resultado. Recebe cada um dos valores mais recentes de cada Observável interno coletado como argumentos, em ordem.',
+			},
+		],
+		links: ['https://rxjs.dev/api/operators/combineLatestAll'],
+		video: ['https://www.youtube.com/embed/nwNrhW-rOKM'],
+		shortDescription:
+			'combineLatestAll pega um Observable de Observables e coleta todos os Observables dele.',
+		listOfDescription: [
+			'Depois que o Observable externo for concluído, ele se inscreverá em todos os Observables coletados e combinará seus valores usando a estratégia combineLatest, de modo que toda vez que um Observable interno emite, o Observable de saída emite',
+			'O Observable de saída emitirá os valores mais recentes de cada Observable interno, em ordem.',
+			'Quando o observável retornado emite, ele emite todos os valores mais recentes',
+			'Se uma função de projeto é fornecida, ela é chamada com cada valor recente de cada Observable interno em qualquer ordem em que eles chegaram, e o resultado da função de projeto é o que é emitido pela saída Observable.',
+			'Se não houver nenhuma função de projeto, um array de todos os valores mais recentes é emitida pela saída Observable.',
+		],
+		tips: ['Combina todos os valores de um Observable de Observables'],
+		gistLink:
+			'https://gist.github.com/rpelizza/7073988ba34cba1e63488c73e4770e83.js',
 	},
 ];

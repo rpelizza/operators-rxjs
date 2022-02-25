@@ -85,6 +85,9 @@ export class AppComponent implements OnInit {
 					option.name.toLowerCase()
 				).includes(filterValue) ||
 				this.replaceSpecialCharacters(
+					option.category.toLocaleLowerCase()
+				).includes(filterValue) ||
+				this.replaceSpecialCharacters(
 					option.shortDescription.toLowerCase()
 				).includes(filterValue) ||
 				option.listOfDescription.filter((el) =>

@@ -587,9 +587,37 @@ export const rxjsList: IRxjsList[] = [
 			'Quando qualquer um dos observáveis de origem emitir, o observável de saída emitirá os valores mais recentes de cada um deles.',
 			'Assim que todas as fontes emitirem pelo menos um valor, todos os valores mais recentes serão emitidos como um array.',
 		],
-		tips: [
-			'Combinação de valores com base em entradas alteradas',
+		tips: ['Combinação de valores com base em entradas alteradas'],
+		gistLink:
+			'https://gist.github.com/rpelizza/ea2b557476e2f05f0a526a323e6784c6.js',
+	},
+	{
+		name: 'concatAll',
+		route: 'concat-all',
+		category: CategoryEnum.Combination,
+		parameters: [],
+		links: [
+			'https://rxjs.dev/api/operators/concatAll',
+			'https://www.learnrxjs.io/learn-rxjs/operators/combination/concatall',
+			'https://indepth.dev/reference/rxjs/operators/concat-all',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/ea2b557476e2f05f0a526a323e6784c6.js',
+		video: ['https://www.youtube.com/embed/vJHbjf4MTWM'],
+		shortDescription:
+			'Combina vários fluxos observáveis internos e emite sequencialmente todos os valores de cada fluxo de entrada fornecido.',
+		listOfDescription: [
+			'É semelhante ao concat, mas em vez de receber um conjunto de fluxos diretamente como entrada, ele usa uma fonte observável que produz outros fluxos (observáveis). Esses fluxos são frequentemente chamados de fluxos internos.',
+			'Quando o observável de origem for inscrito, ele se inscreverá em todos os fluxos internos e emitirá todos os valores de todos os fluxos internos.',
+			'Quando qualquer um dos fluxos internos emitir, o observável de saída emitirá todos os valores mais recentes de todos os fluxos internos.',
+			'Se um fluxo interno emitir um erro, o observável de saída emitirá o erro e não continuará a emitir valores.',
+			'Se um fluxo interno terminar, o observável de saída não continuará a emitir valores.',
+			'O operador tem apenas uma assinatura ativa por vez, a partir da qual os valores são passados ​​para um observador. Uma vez que o fluxo ativo atual é concluído, ele se inscreve no próximo observável em uma sequência.',
+			'À medida que os valores de qualquer sequência combinada são produzidos, esses valores são emitidos como parte da sequência resultante',
+		],
+		tips: [
+			'combina vários fluxos',
+			'emite sequencialmente todos os valores de cada fluxo de entrada fornecido',
+			'combinação de valores com base em entradas alteradas',
+		],
+		gistLink: 'https://gist.github.com/rpelizza/aee5d577edbaff62d6ed9dadf3a863ae.js',
 	},
 ];

@@ -618,6 +618,41 @@ export const rxjsList: IRxjsList[] = [
 			'emite sequencialmente todos os valores de cada fluxo de entrada fornecido',
 			'combinação de valores com base em entradas alteradas',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/aee5d577edbaff62d6ed9dadf3a863ae.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/aee5d577edbaff62d6ed9dadf3a863ae.js',
+	},
+	{
+		name: 'concatMap',
+		route: 'concat-map',
+		category: CategoryEnum.Transformation,
+		parameters: [
+			{
+				name: 'project',
+				default: 'undefined',
+				required: true,
+				type: 'function',
+				description:
+					'Uma função que, quando aplicada a um item emitido pela fonte Observable, retorna um Observable.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/concatMap',
+			'https://www.learnrxjs.io/learn-rxjs/operators/transformation/concatmap',
+			'https://indepth.dev/reference/rxjs/operators/concat-map',
+		],
+		video: ['https://www.youtube.com/embed/pWUp4mu_0Hw'],
+		shortDescription: 'Executa todas as solicitações em sequência',
+		listOfDescription: [
+			'Ao contrário do mergeMap, o concatMap permite executar todas as solicitações em uma sequência - somente quando a solicitação anterior é concluída, uma nova solicitação é iniciada via assinatura.',
+			'Use este operador se a ordem das emissões for importante e você quiser ver primeiro os valores emitidos pelos fluxos que passam primeiro pelo operador.',
+			'O operador concatMap é basicamente uma combinação de dois operadores - concat e map.',
+			'A parte do mapa permite mapear um valor de uma fonte observável para um fluxo observável. Esses fluxos são frequentemente chamados de fluxos internos. A parte concat funciona como concatAll - ela combina todos os fluxos observáveis ​​internos retornados do mapa e emite sequencialmente todos os valores de cada fluxo de entrada.',
+			'',
+		],
+		tips: [
+			'Aplica uma função a cada valor emitido e retorna um Observable',
+			'Aguarda a conclusão do observável anterior antes de executar o próximo',
+		],
+		gistLink: 'https://gist.github.com/rpelizza/930e30d0936afac6eb8b647dc24c0d8f.js',
 	},
 ];

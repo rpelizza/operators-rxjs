@@ -653,6 +653,38 @@ export const rxjsList: IRxjsList[] = [
 			'Aplica uma função a cada valor emitido e retorna um Observable',
 			'Aguarda a conclusão do observável anterior antes de executar o próximo',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/930e30d0936afac6eb8b647dc24c0d8f.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/930e30d0936afac6eb8b647dc24c0d8f.js',
+	},
+	{
+		name: 'concatMapTo',
+		route: 'concat-map-to',
+		category: CategoryEnum.Transformation,
+		parameters: [
+			{
+				name: 'innerObservable',
+				default: 'undefined',
+				required: true,
+				type: 'Observable',
+				description:
+					'O Observable que será emitido quando o fluxo for concluído.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/concatMapTo',
+			'https://www.learnrxjs.io/learn-rxjs/operators/transformation/concatmapto',
+		],
+		video: ['https://www.youtube.com/embed/ktvLt0mKJJY'],
+		shortDescription:
+			'É como concatMap, mas mapeia cada valor sempre para o mesmo Observable interno.',
+		listOfDescription: [
+			'Mapeia cada valor de origem para o Observable internalObservable fornecido, independentemente do valor de origem, e depois nivela os Observables resultantes em um único Observable, que é o Observable de saída.',
+			'O operador concatMapTo é basicamente uma combinação de dois operadores - concat e mapTo.',
+			'A parte do mapa permite mapear um valor de uma fonte observável para um fluxo observável. Esses fluxos são frequentemente chamados de fluxos internos. A parte concat funciona como concatAll - ela combina todos os fluxos observáveis ​​internos retornados do mapa e emite sequencialmente todos os valores de cada fluxo de entrada.',
+			'Cada nova instância de innerObservable emitida na saída Observable é concatenada com a instância de innerObservable anterior.',
+		],
+		tips: ['parecido com concatMap'],
+		gistLink:
+			'https://gist.github.com/rpelizza/c673e3f6d6f157696b5673b9a94a1dfa.js',
 	},
 ];

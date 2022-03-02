@@ -87,5 +87,6 @@ export class DemoComponent implements OnInit, AfterViewInit {
 		return this._sanitizer.bypassSecurityTrustResourceUrl(url);
 	}
 
-	example() {}
+	example() {
+	}
 }

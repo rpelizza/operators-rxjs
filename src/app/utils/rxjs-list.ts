@@ -687,4 +687,45 @@ export const rxjsList: IRxjsList[] = [
 		gistLink:
 			'https://gist.github.com/rpelizza/c673e3f6d6f157696b5673b9a94a1dfa.js',
 	},
+	{
+		name: 'Debounce',
+		route: 'debounce',
+		category: CategoryEnum.Filtering,
+		parameters: [
+			{
+				name: 'durationSelector',
+				default: 'undefined',
+				required: true,
+				type: 'function',
+				description:
+					'Uma função que retorna um valor numérico que representa o tempo de espera.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/debounce',
+			'https://www.learnrxjs.io/learn-rxjs/operators/filtering/debounce',
+			'https://indepth.dev/reference/rxjs/operators/debounce',
+		],
+		video: ['https://www.youtube.com/embed/1yRTnsf4Ia0'],
+		shortDescription:
+			'Como debounceTime, este é um operador de limitação de taxa e também um operador de atraso',
+		listOfDescription: [
+			'debounce atrasa os valores emitidos por uma fonte até que a duração Observable emita um valor ou seja concluída.',
+			'Se dentro desse tempo um novo valor chegar, o valor pendente anterior será descartado e a duração Observável será reassinada',
+			'O operador debounce permite que você espere um tempo, baseado no tempo de duração do observable (durationSelector), antes de emitir um novo valor.',
+			'Este operador é usado principalmente para eventos que podem ser acionados dezenas ou até centenas de vezes por segundo.',
+			'Os exemplos mais comuns são eventos DOM, como rolagem, movimento do mouse e pressionamento de tecla. Ao usar o debouce, você só se preocupa com o estado final.',
+			'Por exemplo, a posição de rolagem atual quando um usuário para de rolar ou um texto final em uma caixa de pesquisa depois que um usuário para de digitar caracteres.',
+			'Além disso, você deve considerar envolver qualquer interação que acione cálculos excessivos ou chamadas de API com um debounce.',
+		],
+		tips: [
+			'aguardar ação do usuário',
+			'usar o debounce para eventos de teclado',
+			'usar o debounce para eventos de mouse',
+			'usar o debounce para eventos de scroll',
+			'atrasar valores',
+			'esperar ação do usuário',
+		],
+		gistLink: 'https://gist.github.com/rpelizza/399670de0bc38a9f4b092dcbb0d56926.js',
+	},
 ];

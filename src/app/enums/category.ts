@@ -5,5 +5,5 @@ export enum CategoryEnum {
 	Transformation = 'Transformações',
 	ErrorHandling = 'Manipulação de erros',
 	Combination = 'Combinações',
-
+	Conditional = 'Condicionais',
 }

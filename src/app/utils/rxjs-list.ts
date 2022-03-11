@@ -755,7 +755,8 @@ export const rxjsList: IRxjsList[] = [
 			'https://indepth.dev/reference/rxjs/operators/debounce-time',
 		],
 		video: ['https://www.youtube.com/embed/FbX2yM3AyaU'],
-		shortDescription: 'debounceTime atrasa os valores emitidos por uma fonte para o prazo determinado.',
+		shortDescription:
+			'debounceTime atrasa os valores emitidos por uma fonte para o prazo determinado.',
 		listOfDescription: [
 			'debounceTime atrasa as notificações emitidas pela fonte Observável, mas descarta as emissões atrasadas pendentes anteriores se uma nova notificação chegar na fonte Observável.',
 			'O operador debounceTime permite que você espere um tempo, baseado no tempo de duração do observable (dueTime), antes de emitir um novo valor.',
@@ -765,7 +766,7 @@ export const rxjsList: IRxjsList[] = [
 			'Se o evento de erro ocorrer durante o dueTime ou depois dele somente o evento de erro é encaminhado para a saída observável. A notificação de cache não é emitida neste caso.',
 			'Se dentro desse tempo um novo valor chegar, o valor pendente anterior será descartado e o cronômetro (dueTime) será reiniciado.',
 			'Ao usar o debouceTime, você se preocupa apenas com o estado final.',
-			'Por exemplo, a posição de rolagem atual quando um usuário para de rolar ou um texto final em uma caixa de pesquisa depois que um usuário para de digitar caracteres.',	
+			'Por exemplo, a posição de rolagem atual quando um usuário para de rolar ou um texto final em uma caixa de pesquisa depois que um usuário para de digitar caracteres.',
 		],
 		tips: [
 			'aguardar ação do usuário',
@@ -773,6 +774,37 @@ export const rxjsList: IRxjsList[] = [
 			'usar o debounceTime para eventos de mouse',
 			'usar o debounceTime para eventos de scroll',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/e854ba123fa5aa9a57abe372c8f2a3ef.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/e854ba123fa5aa9a57abe372c8f2a3ef.js',
+	},
+	{
+		name: 'defaultIfEmpty',
+		route: 'default-if-empty',
+		category: CategoryEnum.Conditional,
+		parameters: [
+			{
+				name: 'defaultValue',
+				default: 'undefined',
+				required: true,
+				type: 'any',
+				description:
+					'O valor padrão a ser usado se o observable não emitir nenhum valor.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/defaultIfEmpty',
+			'https://www.learnrxjs.io/learn-rxjs/operators/conditional/defaultifempty',
+		],
+		video: ['https://www.youtube.com/embed/eTR1ng8rE6A'],
+		shortDescription: 'Substitui valores nulos por um valor padrão.',
+		listOfDescription: [
+			'O operador defaultIfEmpty substitui valores nulos por um valor padrão.',
+			'Emite determinado valor se nada for emitido antes da conclusão',
+			'Se o observable não emitir nenhum valor, o operador defaultIfEmpty emitirá um valor padrão.',
+			'Se o observable emitir um valor, o operador defaultIfEmpty não emitirá nada.',
+		],
+		tips: ['valor padrão', 'se não tiver valor'],
+		gistLink:
+			'https://gist.github.com/rpelizza/7975dcaf91d2a76098b4e805f0ddace1.js',
 	},
 ];

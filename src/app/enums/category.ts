@@ -6,4 +6,5 @@ export enum CategoryEnum {
 	ErrorHandling = 'Manipulação de erros',
 	Combination = 'Combinações',
 	Conditional = 'Condicionais',
+	Utility = 'Utilitários',
 }

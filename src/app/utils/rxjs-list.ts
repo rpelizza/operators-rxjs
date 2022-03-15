@@ -807,4 +807,43 @@ export const rxjsList: IRxjsList[] = [
 		gistLink:
 			'https://gist.github.com/rpelizza/7975dcaf91d2a76098b4e805f0ddace1.js',
 	},
+	{
+		name: 'Delay',
+		route: 'delay',
+		category: CategoryEnum.Utility,
+		parameters: [
+			{
+				name: 'due',
+				default: 'undefined',
+				required: true,
+				type: 'number',
+				description: 'O tempo de espera em milissegundos.',
+			},
+			{
+				name: 'scheduler',
+				default: 'undefined',
+				required: false,
+				type: 'Scheduler',
+				description: 'O escalonador a ser usado.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/delay',
+			'https://www.learnrxjs.io/learn-rxjs/operators/utility/delay',
+			'https://indepth.dev/reference/rxjs/operators/delay',
+		],
+		video: ['https://www.youtube.com/embed/tVVAvVd61zo'],
+		shortDescription:
+			'Atrasa (delay) valores emitidos por um tempo determinado.',
+		listOfDescription: [
+			'Delay desloca cada valor emitido da fonte observável por um período de tempo definido ou até uma determinada data.',
+			'Delay é comumente usado para simular alguma atividade assíncrona, como requisições.',
+		],
+		tips: [
+			'usar delay para simular uma requisição',
+			'usar delay para simular uma atividade assíncrona',
+			'atrasar resultado de uma requisição',
+		],
+		gistLink: 'https://gist.github.com/rpelizza/78d7aa1f97dd211ac32e7963f7005996.js',
+	},
 ];

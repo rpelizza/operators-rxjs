@@ -8,12 +8,7 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import {
-	BehaviorSubject,
-	Subject,
-	switchMap,
-	tap,
-} from 'rxjs';
+import { BehaviorSubject, Subject, switchMap, tap } from 'rxjs';
 import { IRxjsList } from 'src/app/interfaces/IRxjsList.interface';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 
@@ -92,5 +87,6 @@ export class DemoComponent implements OnInit, AfterViewInit {
 		return this._sanitizer.bypassSecurityTrustResourceUrl(url);
 	}
 
-	example() {	}
+	example() {
+	}
 }

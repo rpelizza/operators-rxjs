@@ -846,4 +846,42 @@ export const rxjsList: IRxjsList[] = [
 		],
 		gistLink: 'https://gist.github.com/rpelizza/78d7aa1f97dd211ac32e7963f7005996.js',
 	},
+	{
+		name: 'delayWhen',
+		route: 'delay-when',
+		category: CategoryEnum.Utility,
+		parameters: [
+			{
+				name: 'delayDurationSelector',
+				default: 'undefined',
+				required: true,
+				type: 'function',
+				description: 'A função que determina o tempo de espera.',
+			},
+			{
+				name: 'subscriptionDelay',
+				default: 'undefined',
+				required: false,
+				type: 'Observable',
+				description: 'O observable que determina o tempo de espera.',
+			}
+		],
+		links: [
+			'https://rxjs.dev/api/operators/delayWhen',
+			'https://www.learnrxjs.io/learn-rxjs/operators/utility/delaywhen',
+		],
+		video: ['https://www.youtube.com/embed/6h3euwJTIsA'],
+		shortDescription: 'Valores emitidos cm delay determinados pela função fornecida',
+		listOfDescription: [
+			'Quando a fonte emite um valor, a função delayDurationSelector é chamada com o valor da fonte como argumento e deve retornar um Observable, chamado de "duration" Observable.',
+			'O operador delayWhen espera o tempo determinado pelo Observable duration, e em seguida, emite o valor da fonte.',
+			'O operador delayWhen é usado para simular atividades assíncronas, como requisições.',
+		],
+		tips: [
+			'usar delayWhen para simular uma requisição',
+			'usar delayWhen para simular uma atividade assíncrona',
+			'atrasar resultado de uma requisição',
+		],
+		gistLink: 'https://gist.github.com/rpelizza/daa8bf3eabda8d1237876297f14a577d.js',
+	},
 ];

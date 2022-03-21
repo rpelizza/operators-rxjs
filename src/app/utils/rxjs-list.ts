@@ -884,4 +884,42 @@ export const rxjsList: IRxjsList[] = [
 		],
 		gistLink: 'https://gist.github.com/rpelizza/daa8bf3eabda8d1237876297f14a577d.js',
 	},
+	{
+		name: 'Distinct',
+		route: 'distinct',
+		category: CategoryEnum.Filtering,
+		parameters: [
+			{
+				name: 'keySelector',
+				default: 'undefined',
+				required: false,
+				type: 'function',
+				description: 'A função que determina o valor a ser comparado.',
+			},
+			{
+				name: 'flushes',
+				default: 'undefined',
+				required: false,
+				type: 'Observable',
+				description: 'O observable que determina o valor a ser comparado.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/distinct',
+			'https://www.learnrxjs.io/learn-rxjs/operators/filtering/distinct'
+		],
+		video: [
+			'https://www.youtube.com/embed/rRCFEpKUUA8'
+		],
+		shortDescription: 'Emite itens emitidos que são distintos com base em qualquer item emitido anteriormente',
+		listOfDescription: [
+			'O operador distinct espera um valor a ser comparado com os valores emitidos anteriormente.',
+			'O operador distinct é usado para filtrar valores repetidos.',
+		],
+		tips: [
+			'filtra valores repetidos',
+			'compara os valores'
+		],
+		gistLink: 'https://gist.github.com/rpelizza/59c234a327e4df789ee36ada3d83952f.js',
+	},
 ];

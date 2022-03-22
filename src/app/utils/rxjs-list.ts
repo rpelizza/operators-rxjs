@@ -844,7 +844,8 @@ export const rxjsList: IRxjsList[] = [
 			'usar delay para simular uma atividade assíncrona',
 			'atrasar resultado de uma requisição',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/78d7aa1f97dd211ac32e7963f7005996.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/78d7aa1f97dd211ac32e7963f7005996.js',
 	},
 	{
 		name: 'delayWhen',
@@ -864,14 +865,15 @@ export const rxjsList: IRxjsList[] = [
 				required: false,
 				type: 'Observable',
 				description: 'O observable que determina o tempo de espera.',
-			}
+			},
 		],
 		links: [
 			'https://rxjs.dev/api/operators/delayWhen',
 			'https://www.learnrxjs.io/learn-rxjs/operators/utility/delaywhen',
 		],
 		video: ['https://www.youtube.com/embed/6h3euwJTIsA'],
-		shortDescription: 'Valores emitidos cm delay determinados pela função fornecida',
+		shortDescription:
+			'Valores emitidos cm delay determinados pela função fornecida',
 		listOfDescription: [
 			'Quando a fonte emite um valor, a função delayDurationSelector é chamada com o valor da fonte como argumento e deve retornar um Observable, chamado de "duration" Observable.',
 			'O operador delayWhen espera o tempo determinado pelo Observable duration, e em seguida, emite o valor da fonte.',
@@ -882,7 +884,8 @@ export const rxjsList: IRxjsList[] = [
 			'usar delayWhen para simular uma atividade assíncrona',
 			'atrasar resultado de uma requisição',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/daa8bf3eabda8d1237876297f14a577d.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/daa8bf3eabda8d1237876297f14a577d.js',
 	},
 	{
 		name: 'Distinct',
@@ -901,25 +904,56 @@ export const rxjsList: IRxjsList[] = [
 				default: 'undefined',
 				required: false,
 				type: 'Observable',
-				description: 'O observable que determina o valor a ser comparado.',
+				description:
+					'O observable que determina o valor a ser comparado.',
 			},
 		],
 		links: [
 			'https://rxjs.dev/api/operators/distinct',
-			'https://www.learnrxjs.io/learn-rxjs/operators/filtering/distinct'
+			'https://www.learnrxjs.io/learn-rxjs/operators/filtering/distinct',
 		],
-		video: [
-			'https://www.youtube.com/embed/rRCFEpKUUA8'
-		],
-		shortDescription: 'Emite itens emitidos que são distintos com base em qualquer item emitido anteriormente',
+		video: ['https://www.youtube.com/embed/rRCFEpKUUA8'],
+		shortDescription:
+			'Emite itens emitidos que são distintos com base em qualquer item emitido anteriormente',
 		listOfDescription: [
 			'O operador distinct espera um valor a ser comparado com os valores emitidos anteriormente.',
 			'O operador distinct é usado para filtrar valores repetidos.',
 		],
+		tips: ['filtra valores repetidos', 'compara os valores'],
+		gistLink:
+			'https://gist.github.com/rpelizza/59c234a327e4df789ee36ada3d83952f.js',
+	},
+	{
+		name: 'distinctUntilChanged',
+		route: 'distinct-until-changed',
+		category: CategoryEnum.Filtering,
+		parameters: [
+			{
+				name: 'compare',
+				default: 'undefined',
+				required: false,
+				type: 'function',
+				description: 'A função que determina o valor a ser comparado.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/distinctUntilChanged',
+			'https://www.learnrxjs.io/learn-rxjs/operators/filtering/distinctuntilchanged',
+			'https://indepth.dev/reference/rxjs/operators/distinct-until-changed',
+		],
+		video: [
+			'https://www.youtube.com/embed/9Z3hjL7etQg'
+		],
+		shortDescription: 'Só emite quando o valor atual é diferente do último',
+		listOfDescription: [
+			'emite todos os itens emitidos pela fonte observável que são distintos por comparação do item anterior',
+			'O operador distinctUntilChanged é usado para filtrar valores repetidos.',
+			'O operador usa uma função de comparação opcional que será chamada para testar se um item é diferente do item anterior',
+		],
 		tips: [
 			'filtra valores repetidos',
-			'compara os valores'
+			'compara os valores',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/59c234a327e4df789ee36ada3d83952f.js',
+		gistLink: 'https://gist.github.com/rpelizza/90e9400db37aab09efe2f0b1a42f0939.js',
 	},
 ];

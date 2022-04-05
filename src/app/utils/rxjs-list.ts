@@ -941,19 +941,50 @@ export const rxjsList: IRxjsList[] = [
 			'https://www.learnrxjs.io/learn-rxjs/operators/filtering/distinctuntilchanged',
 			'https://indepth.dev/reference/rxjs/operators/distinct-until-changed',
 		],
-		video: [
-			'https://www.youtube.com/embed/9Z3hjL7etQg'
-		],
+		video: ['https://www.youtube.com/embed/9Z3hjL7etQg'],
 		shortDescription: 'Só emite quando o valor atual é diferente do último',
 		listOfDescription: [
 			'emite todos os itens emitidos pela fonte observável que são distintos por comparação do item anterior',
 			'O operador distinctUntilChanged é usado para filtrar valores repetidos.',
 			'O operador usa uma função de comparação opcional que será chamada para testar se um item é diferente do item anterior',
 		],
-		tips: [
-			'filtra valores repetidos',
-			'compara os valores',
+		tips: ['filtra valores repetidos', 'compara os valores'],
+		gistLink:
+			'https://gist.github.com/rpelizza/90e9400db37aab09efe2f0b1a42f0939.js',
+	},
+	{
+		name: 'distinctUntilKeyChanged',
+		route: 'distinct-until-key-changed',
+		category: CategoryEnum.Filtering,
+		parameters: [
+			{
+				name: 'key',
+				default: 'undefined',
+				required: false,
+				type: 'string',
+				description: 'O nome da chave a ser comparada.',
+			},
+			{
+				name: 'compare',
+				default: 'undefined',
+				required: false,
+				type: 'function',
+				description: 'A função que determina o valor a ser comparado.',
+			},
 		],
-		gistLink: 'https://gist.github.com/rpelizza/90e9400db37aab09efe2f0b1a42f0939.js',
+		links: [
+			'https://rxjs.dev/api/operators/distinctUntilKeyChanged',
+			'https://www.learnrxjs.io/learn-rxjs/operators/filtering/distinctuntilkeychanged',
+		],
+		video: ['https://www.youtube.com/embed/Y1eQIKM43L8'],
+		shortDescription: 'só emite quando o valor da chave especificado foi alterado',
+		listOfDescription: [
+			'Se uma função de comparação for fornecida, ela será chamada para cada item para testar se esse valor deve ou não ser emitido.',
+			'Se uma função de comparação não for fornecida, uma verificação de igualdade será usada por padrão.',
+		],
+		tips: [
+			'compara valores de chave especificada',
+		],
+		gistLink: 'https://gist.github.com/rpelizza/5ae2b55c901451c76d64268ebf204d8d.js',
 	},
 ];

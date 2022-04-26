@@ -977,14 +977,51 @@ export const rxjsList: IRxjsList[] = [
 			'https://www.learnrxjs.io/learn-rxjs/operators/filtering/distinctuntilkeychanged',
 		],
 		video: ['https://www.youtube.com/embed/Y1eQIKM43L8'],
-		shortDescription: 'só emite quando o valor da chave especificado foi alterado',
+		shortDescription:
+			'só emite quando o valor da chave especificado foi alterado',
 		listOfDescription: [
 			'Se uma função de comparação for fornecida, ela será chamada para cada item para testar se esse valor deve ou não ser emitido.',
 			'Se uma função de comparação não for fornecida, uma verificação de igualdade será usada por padrão.',
 		],
-		tips: [
-			'compara valores de chave especificada',
+		tips: ['compara valores de chave especificada'],
+		gistLink:
+			'https://gist.github.com/rpelizza/5ae2b55c901451c76d64268ebf204d8d.js',
+	},
+	{
+		name: 'Every',
+		route: 'every',
+		category: CategoryEnum.Conditional,
+		parameters: [
+			{
+				name: 'predicate',
+				default: 'undefined',
+				required: false,
+				type: 'function',
+				description: 'A função que determina se o item é válido.',
+			},
+			{
+				name: 'thisArg',
+				default: 'undefined',
+				required: false,
+				type: 'Any',
+				description:
+					'Objeto opcional a ser usado para o this no retorno da chamada.',
+			},
 		],
-		gistLink: 'https://gist.github.com/rpelizza/5ae2b55c901451c76d64268ebf204d8d.js',
+		links: [
+			'https://rxjs.dev/api/operators/every',
+			'https://www.learnrxjs.io/learn-rxjs/operators/conditional/every',
+		],
+		video: ['https://www.youtube.com/embed/908PDgRjlmc'],
+		shortDescription: 'Se todos os valores passarem o predicado antes da conclusão emitem true, senão false.',
+		listOfDescription: [
+			'Se todos os valores passarem o predicado antes da conclusão, o operador every emite true, senão false.',
+			'O operador every é usado para verificar se todos os valores passam um predicado.',
+		],
+		tips: [
+			'emite true se todos os valores passarem o predicado',
+			'emite false se algum valor não passar o predicado',
+		],
+		gistLink: 'https://gist.github.com/rpelizza/08434929748fcdbb66aa95b41f054be3.js',
 	},
 ];

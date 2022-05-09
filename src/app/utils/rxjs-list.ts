@@ -1013,7 +1013,8 @@ export const rxjsList: IRxjsList[] = [
 			'https://www.learnrxjs.io/learn-rxjs/operators/conditional/every',
 		],
 		video: ['https://www.youtube.com/embed/908PDgRjlmc'],
-		shortDescription: 'Se todos os valores passarem o predicado antes da conclusão emitem true, senão false.',
+		shortDescription:
+			'Se todos os valores passarem o predicado antes da conclusão emitem true, senão false.',
 		listOfDescription: [
 			'Se todos os valores passarem o predicado antes da conclusão, o operador every emite true, senão false.',
 			'O operador every é usado para verificar se todos os valores passam um predicado.',
@@ -1022,6 +1023,22 @@ export const rxjsList: IRxjsList[] = [
 			'emite true se todos os valores passarem o predicado',
 			'emite false se algum valor não passar o predicado',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/08434929748fcdbb66aa95b41f054be3.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/08434929748fcdbb66aa95b41f054be3.js',
+	},
+	{
+		name: 'exhaustAll',
+		route: 'exhaust-all',
+		category: CategoryEnum.Transformation,
+		parameters: [],
+		links: ['https://rxjs.dev/api/operators/exhaustAll'],
+		video: ['https://www.youtube.com/embed/zILQWE9u_3w'],
+		shortDescription:
+			'Converte um Observável de ordem superior em um Observável de primeira ordem descartando Observáveis internos enquanto o Observável interno anterior ainda não foi concluído.',
+		listOfDescription: [
+			'exaustorAll assina um Observable que emite Observables, também conhecido como Observable de ordem superior. Cada vez que observa um desses Observables internos emitidos, o Observable de saída começa a emitir os itens emitidos por esse Observable interno. Até agora, ele se comporta como mergeAll. No entanto, o escapeAll ignora cada novo Observável interno se o Observável anterior ainda não tiver sido concluído. Uma vez concluído, ele aceitará e nivelará o próximo Observável interno e repetirá esse processo.',
+		],
+		tips: [],
+		gistLink: 'https://gist.github.com/rpelizza/e8a5ddee67d2b5d5e5f1863ddf4cfe07.js',
 	},
 ];

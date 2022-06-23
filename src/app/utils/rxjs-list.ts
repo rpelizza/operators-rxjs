@@ -1039,6 +1039,38 @@ export const rxjsList: IRxjsList[] = [
 			'exaustorAll assina um Observable que emite Observables, também conhecido como Observable de ordem superior. Cada vez que observa um desses Observables internos emitidos, o Observable de saída começa a emitir os itens emitidos por esse Observable interno. Até agora, ele se comporta como mergeAll. No entanto, o escapeAll ignora cada novo Observável interno se o Observável anterior ainda não tiver sido concluído. Uma vez concluído, ele aceitará e nivelará o próximo Observável interno e repetirá esse processo.',
 		],
 		tips: [],
-		gistLink: 'https://gist.github.com/rpelizza/e8a5ddee67d2b5d5e5f1863ddf4cfe07.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/e8a5ddee67d2b5d5e5f1863ddf4cfe07.js',
+	},
+	{
+		name: 'ExhaustMap',
+		route: 'exhaust-map',
+		category: CategoryEnum.Transformation,
+		parameters: [
+			{
+				name: 'project',
+				default: 'undefined',
+				required: false,
+				type: 'function',
+				description:
+					'A função que determina o Observável a ser emitido.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/exhaustMap',
+			'https://www.learnrxjs.io/learn-rxjs/operators/transformation/exhaustmap',
+			'https://indepth.dev/reference/rxjs/operators/exhaust-map',
+		],
+		video: ['https://www.youtube.com/embed/UZ3a17cuN1o'],
+		shortDescription:
+			'Projeta cada valor de origem para um Observável que é mesclado na saída Observável somente se o Observável projetado anterior tiver sido concluído',
+		listOfDescription: [
+			'permite mapear um valor de uma fonte observável de ordem superior para um fluxo observável interno',
+			'A parte de exhaust que se inscreve em um observável interno e passa valores para um observador se já não houver uma assinatura ativa, caso contrário, apenas ignora novos observáveis internos',
+			'tem apenas uma assinatura ativa por vez, a partir da qual os valores são passados para um observador',
+			'o operador exhaustMap é um operador de transformação que permite que você projete um valor de entrada para um fluxo de saída, mesclando o fluxo de saída com o fluxo de entrada',
+		],
+		tips: [],
+		gistLink: 'https://gist.github.com/rpelizza/21d2a459fc036645e4fc0a2e8e9a54a5.js',
 	},
 ];

@@ -1071,7 +1071,8 @@ export const rxjsList: IRxjsList[] = [
 			'o operador exhaustMap é um operador de transformação que permite que você projete um valor de entrada para um fluxo de saída, mesclando o fluxo de saída com o fluxo de entrada',
 		],
 		tips: [],
-		gistLink: 'https://gist.github.com/rpelizza/21d2a459fc036645e4fc0a2e8e9a54a5.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/21d2a459fc036645e4fc0a2e8e9a54a5.js',
 	},
 	{
 		name: 'Expand',
@@ -1107,9 +1108,7 @@ export const rxjsList: IRxjsList[] = [
 			'https://rxjs.dev/api/operators/expand',
 			'https://www.learnrxjs.io/learn-rxjs/operators/transformation/expand',
 		],
-		video: [
-			'https://www.youtube.com/embed/6qw3d3eCIOA'
-		],
+		video: ['https://www.youtube.com/embed/6qw3d3eCIOA'],
 		shortDescription: 'Chama recursivamente a função fornecida.',
 		listOfDescription: [
 			'expand é um operador de transformação que chama recursivamente a função fornecida e emite os resultados.',
@@ -1120,6 +1119,50 @@ export const rxjsList: IRxjsList[] = [
 			'aplicação de função de projeção',
 			'emissão de valores de saída',
 		],
-		gistLink: 'https://gist.github.com/rpelizza/a84874edd970b384658f77a23f3fff17.js',
+		gistLink:
+			'https://gist.github.com/rpelizza/a84874edd970b384658f77a23f3fff17.js',
+	},
+	{
+		name: 'Filter',
+		route: 'filter',
+		category: CategoryEnum.Filtering,
+		parameters: [
+			{
+				name: 'predicate',
+				default: 'undefined',
+				required: false,
+				type: 'function',
+				description:
+					'A função que determina se um valor de entrada deve ser filtrado.',
+			},
+			{
+				name: 'thisArg',
+				default: 'undefined',
+				required: false,
+				type: 'any',
+				description:
+					'O valor a ser usado como this na função de filtro.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/filter',
+			'https://www.learnrxjs.io/learn-rxjs/operators/filtering/filter',
+			'https://indepth.dev/reference/rxjs/operators/filter',
+		],
+		video: [
+			'https://www.youtube.com/embed/tk5x8By3yYk'
+		],
+		shortDescription: 'Filtra os valores de entrada.',
+		listOfDescription: [
+			'filtra os valores de entrada',
+			'é um operador de filtragem que filtra os valores de entrada',
+			'A ideia é muito semelhante ao método de filtro padrão no Array.',
+			'Se você só precisa filtrar valores semelhantes consecutivos, pode usar distinctUntilChanged.',
+		],
+		tips: [
+			'filtra os valores de entrada',
+			'semelhante ao método filter',
+		],
+		gistLink: 'https://gist.github.com/rpelizza/04d8590daa5fc4402aca87da09551642.js',
 	},
 ];

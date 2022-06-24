@@ -1073,4 +1073,53 @@ export const rxjsList: IRxjsList[] = [
 		tips: [],
 		gistLink: 'https://gist.github.com/rpelizza/21d2a459fc036645e4fc0a2e8e9a54a5.js',
 	},
+	{
+		name: 'Expand',
+		route: 'expand',
+		category: CategoryEnum.Transformation,
+		parameters: [
+			{
+				name: 'project',
+				default: 'undefined',
+				required: false,
+				type: 'function',
+				description:
+					'A função que determina o Observável a ser emitido.',
+			},
+			{
+				name: 'concurrent',
+				default: 'undefined',
+				required: false,
+				type: 'number',
+				description:
+					'O número máximo de observáveis internos que podem ser emitidos por vez.',
+			},
+			{
+				name: 'scheduler',
+				default: 'undefined',
+				required: false,
+				type: 'Scheduler',
+				description:
+					'O escalonador a ser usado para controlar o fluxo de saída.',
+			},
+		],
+		links: [
+			'https://rxjs.dev/api/operators/expand',
+			'https://www.learnrxjs.io/learn-rxjs/operators/transformation/expand',
+		],
+		video: [
+			'https://www.youtube.com/embed/6qw3d3eCIOA'
+		],
+		shortDescription: 'Chama recursivamente a função fornecida.',
+		listOfDescription: [
+			'expand é um operador de transformação que chama recursivamente a função fornecida e emite os resultados.',
+			'É semelhante ao mergeMap, mas aplica a função de projeção a todos os valores de origem, bem como a todos os valores de saída. É recursivo.',
+		],
+		tips: [
+			'recursivamente',
+			'aplicação de função de projeção',
+			'emissão de valores de saída',
+		],
+		gistLink: 'https://gist.github.com/rpelizza/a84874edd970b384658f77a23f3fff17.js',
+	},
 ];

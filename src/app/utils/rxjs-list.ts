@@ -1149,9 +1149,7 @@ export const rxjsList: IRxjsList[] = [
 			'https://www.learnrxjs.io/learn-rxjs/operators/filtering/filter',
 			'https://indepth.dev/reference/rxjs/operators/filter',
 		],
-		video: [
-			'https://www.youtube.com/embed/tk5x8By3yYk'
-		],
+		video: ['https://www.youtube.com/embed/tk5x8By3yYk'],
 		shortDescription: 'Filtra os valores de entrada.',
 		listOfDescription: [
 			'filtra os valores de entrada',
@@ -1159,10 +1157,37 @@ export const rxjsList: IRxjsList[] = [
 			'A ideia é muito semelhante ao método de filtro padrão no Array.',
 			'Se você só precisa filtrar valores semelhantes consecutivos, pode usar distinctUntilChanged.',
 		],
-		tips: [
-			'filtra os valores de entrada',
-			'semelhante ao método filter',
+		tips: ['filtra os valores de entrada', 'semelhante ao método filter'],
+		gistLink:
+			'https://gist.github.com/rpelizza/04d8590daa5fc4402aca87da09551642.js',
+	},
+	{
+		name: 'Finalize',
+		route: 'finalize',
+		category: CategoryEnum.Utility,
+		parameters: [
+			{
+				name: 'callback',
+				default: 'undefined',
+				required: false,
+				type: 'function',
+				description:
+					'A função que será chamada quando o fluxo de saída terminar.',
+			},
 		],
-		gistLink: 'https://gist.github.com/rpelizza/04d8590daa5fc4402aca87da09551642.js',
+		links: [
+			'https://rxjs.dev/api/operators/finalize',
+			'https://www.learnrxjs.io/learn-rxjs/operators/utility/finalize',
+		],
+		video: ['https://www.youtube.com/embed/8ackjL3FsRM'],
+		shortDescription: 'Chama uma função quando o observável for concluído ou tiver erros',
+		listOfDescription: [
+			'finalize é um operador que chama uma função quando o fluxo de saída for concluído ou tiver erros.',
+		],
+		tips: [
+			'chama uma função quando o fluxo de saída for concluído ou tiver erros',
+			'é um operador de utilidade que chama uma função quando o fluxo de saída for concluído ou tiver erros.',
+		],
+		gistLink: 'https://gist.github.com/rpelizza/499af3048635a2358a0aafa2ef20b166.js',
 	},
 ];
